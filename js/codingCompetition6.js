@@ -126,5 +126,5 @@ document.getElementById("addendbutton").addEventListener("click", function(){
 document.getElementById("arraySizeBtn").addEventListener("click", function(){
   // let input=document.getElementById("targetinput").value
   //  document.getElementById("result2").innerHTML=validateFormat(input);
-  alert("Array size button clicked");
+  createArray();
 });
