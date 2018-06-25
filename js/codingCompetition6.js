@@ -29,7 +29,7 @@ let slctFlat = _.map(flattened, function(group){
 });
 function updateSlider(slideAmount) {
   //get the element
-  let strPrct = document.getElementById("chosen");
+  let display = document.getElementById("chosen");
   //show the amount
   display.innerHTML=slideAmount + "%";
   let pic = document.getElementById("pic");
@@ -39,7 +39,13 @@ function updateSlider(slideAmount) {
 }
 function createArray(slideAmount) {
   //get the element
-  alert("You set array to " + strPrct + "% string.")
+  let display = document.getElementById("chosen");
+  //show the amount
+  display.innerHTML=slideAmount + "%";
+  let pic = document.getElementById("pic");
+  //set the dimensions
+  pic.style.width=slideAmount+"%";
+  pic.style.height=slideAmount+"%";
 }
 let displaytxt ="<br>"+displayNbr+displayStr+"The complete array: <br>"+JSON.stringify(slctFlat, null, 4)+"<br>";
 //why did the step above result in curly brackets?
