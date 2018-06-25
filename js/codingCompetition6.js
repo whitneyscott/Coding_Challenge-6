@@ -27,6 +27,16 @@ let slctFlat = _.map(flattened, function(group){
   return group;
   }
 });
+function updateSlider(slideAmount) {
+  //get the element
+  let display = document.getElementById("chosen");
+  //show the amount
+  display.innerHTML=slideAmount;
+  var pic = document.getElementById("pic");
+  //set the dimensions
+  pic.style.width=slideAmount+"%";
+  pic.style.height=slideAmount+"%";
+}
 let displaytxt ="<br>"+displayNbr+displayStr+"The complete array: <br>"+JSON.stringify(slctFlat, null, 4)+"<br>";
 //why did the step above result in curly brackets?
 console.log("Sorted by typeof: ", output);

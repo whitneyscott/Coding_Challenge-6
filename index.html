@@ -61,7 +61,22 @@
           Sort and group duplicates.
           With separate groups for numbers and strings
           <br>
-
+          Enter the number of items you want in the array<input type="text" id="arraySize" value="100">
+          <br>
+          What percent of the items do you want to be strings
+          <br>
+          <div id="slider">
+           5% <input id="slide" type="range"
+           min="5" max="100" step="5" value="50"
+           onchange="updateSlider(this.value)" />
+           100%
+          </div>
+          <div id="chosen">100</div>
+          <div id="picHolder">
+            <img id="pic" src="http://aslexpress.net/codingCompetition6/img/Profile.jpg"
+          ?<input type="text" id="percentString" value="50">
+          <button type = "button" id="arraySizeBtn">Create the array </button><br>
+          <br>
           <br>
           Result: 
           <br>
