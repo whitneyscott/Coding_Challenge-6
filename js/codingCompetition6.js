@@ -106,7 +106,7 @@ function hex2rgb(hex,opacity){
     r = parseInt(hex.substring(0,2), 16);
     g = parseInt(hex.substring(2,4), 16);
     b = parseInt(hex.substring(4,6), 16);
-    result = 'rgba('+r+','+g+','+b+')';
+    result = 'rgb('+r+','+g+','+b+')';
     //document.getElementById("result").innerHTML = result;
     return result;
 }
