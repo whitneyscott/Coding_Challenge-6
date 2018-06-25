@@ -1,5 +1,24 @@
 //*****************Question1 1
-let arr = [1,2,4,591,392,"392",391,2,5,10,2,"1","1",1,20,20,"20","20"];
+//let arr = [1,2,4,591,392,"392",391,2,5,10,2,"1","1",1,20,20,"20","20"];
+
+function createArray(arrSz,prctStr,arrMx) {
+let j = 0;
+let i = 0
+let min = 0;
+let max = arrMx;
+let arr = [];
+let randnum = 0;
+let nbrStrings = (prctStr/100)*arrSz;
+while(j < arrSz)
+  {
+    randnum = Math.floor(Math.random()*(max));
+    if(i<nbrStrings){
+      randnum = randnum.toString();
+    }
+    i++;
+    arr.push(randnum);
+    j++;
+  }
 let groupByArr = _.groupBy(arr, function(val){ return typeof(val); } );
 //requires underscore.js package
 let output = Object.values(groupByArr);//gets rid of useless indexes
@@ -10,16 +29,15 @@ let subDiv = _.map(output, function (nested) {
 let cleaned = _.map(subDiv, function (nests) {
   return Object.values(nests);
 });
-let numArr = Object.values(subDiv[0]);
-let strArr = Object.values(subDiv[1]);
+let numArr = cleaned[1];
+let strArr = cleaned[0];
 console.log("numbers: ", numArr);
-let displayNbr = "Number arrays: <br>" + JSON.stringify(numArr, null, 4)+ "<br>";
-let displayStr = "String arrays: <br>" + JSON.stringify(strArr, null, 4)+ "<br>";
+
 let flattened = cleaned.reduce(function(prev, curr) {
   return prev.concat(curr);
 });
-// reinsert selective flattening here using map and return either group or group[0] - if it has only one element
-let slctFlat = _.map(flattened, function(group){
+//I want to convert this to a single function:
+let slctFlatNum = _.map(numArr, function(group){
   if(group.length===1){
   return group[0];
   }
@@ -27,26 +45,26 @@ let slctFlat = _.map(flattened, function(group){
   return group;
   }
 });
-function updateSlider(slideAmount) {
-  //get the element
-  let prctDspl = document.getElementById("chosen");
-  //show the amount
-  prctDspl.innerHTML=slideAmount + "%";
-  let pic = document.getElementById("pic");
-  //set the dimensions
-  pic.style.width=slideAmount+"%";
-  pic.style.height=slideAmount+"%";
-}
-function createArray(arrSz,prctStr) {
-  alert("Creating an array with ");
-}
-let displaytxt ="<br>"+displayNbr+displayStr+"The complete array: <br>"+JSON.stringify(slctFlat, null, 4)+"<br>";
+let slctFlatStr = _.map(strArr, function(group){
+  if(group.length===1){
+  return group[0];
+  }
+  else{
+  return group;
+  }
+});
+let displayNbr = "Number arrays: <br>" + JSON.stringify(slctFlatNum, null, 4)+ "<br>";
+let displayStr = "String arrays: <br>" + JSON.stringify(slctFlatStr, null, 4)+ "<br>";
+/* let displaytxt ="<br>"+displayNbr+displayStr+"The complete array: <br>"+JSON.stringify(slctFlat, null, 4)+"<br>"; */
+let rawStr = "<br>The raw array: <br>"+JSON.stringify(arr, null, 4)+"<br>";
+let grouped = "<br>The rough grouped array: <br>"+JSON.stringify(cleaned, null, 4)+"<br>"
+let displaytxt =rawStr + displayNbr + displayStr;
 //why did the step above result in curly brackets?
-console.log("Sorted by typeof: ", output);
-console.log("Subdivided groups: ",subDiv);
+/* console.log("Sorted by typeof: ", output);
+console.log("Subdivided groups: ",subDiv); */
+console.log("The raw array: ",arr)
 document.getElementById("result1").innerHTML=displaytxt;
-//I was able to selectively flatten groups with single numbers when typeof did not matter.
-//trying to selectively flatten arrays with single elements - I had headaches working with array of objects created by separating strings and number
+}
 
 //***************** Question 2
 
@@ -89,7 +107,7 @@ function hex2rgb(hex,opacity){
     g = parseInt(hex.substring(2,4), 16);
     b = parseInt(hex.substring(4,6), 16);
     result = 'rgba('+r+','+g+','+b+')';
-    document.getElementById("result").innerHTML = result;
+    //document.getElementById("result").innerHTML = result;
     return result;
 }
 function detectFormat(input){ 
@@ -124,8 +142,13 @@ document.getElementById("addendbutton").addEventListener("click", function(){
    document.getElementById("result2").innerHTML=validateFormat(input);
 });
 document.getElementById("arraySizeBtn").addEventListener("click", function(){
-  let prctStr=document.getElementById("q1slide").value
-  let arrSz=document.getElementById("arraySize").value
+  let prctStr=document.getElementById("q1slide").value;
+  let arrSz=document.getElementById("arraySize").value;  
+  let arrMx=document.getElementById("arrayMax").value;
     //  document.getElementById("result2").innerHTML=validateFormat(input);
-  createArray(arrSz,prctStr);
+  createArray(arrSz,prctStr,arrMx);
+});
+document.getElementById("q1slide").addEventListener("input", function(){
+  let prctStr=document.getElementById("q1slide").value;
+  document.getElementById("chosen").innerHTML=prctStr+"%"
 });
