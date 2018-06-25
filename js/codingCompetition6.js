@@ -37,15 +37,8 @@ function updateSlider(slideAmount) {
   pic.style.width=slideAmount+"%";
   pic.style.height=slideAmount+"%";
 }
-function createArray(slideAmount) {
-  //get the element
-  let display = document.getElementById("chosen");
-  //show the amount
-  display.innerHTML=slideAmount + "%";
-  let pic = document.getElementById("pic");
-  //set the dimensions
-  pic.style.width=slideAmount+"%";
-  pic.style.height=slideAmount+"%";
+function createArray(arraySize, prctStr) {
+  alert("attempting array creation");
 }
 let displaytxt ="<br>"+displayNbr+displayStr+"The complete array: <br>"+JSON.stringify(slctFlat, null, 4)+"<br>";
 //why did the step above result in curly brackets?
@@ -129,4 +122,9 @@ document.getElementById("convertbutton").addEventListener("click", function(){
 document.getElementById("addendbutton").addEventListener("click", function(){
   let input=document.getElementById("targetinput").value
    document.getElementById("result2").innerHTML=validateFormat(input);
+});
+document.getElementById("arraySizeBtn").addEventListener("click", function(){
+  // let input=document.getElementById("targetinput").value
+  //  document.getElementById("result2").innerHTML=validateFormat(input);
+  alert("Array size button clicked");
 });
