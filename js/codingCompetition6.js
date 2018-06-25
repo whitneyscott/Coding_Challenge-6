@@ -126,5 +126,5 @@ document.getElementById("addendbutton").addEventListener("click", function(){
 });
 document.getElementById("arraySizeBtn").addEventListener("click", function(){
   let arraySize=document.getElementById("arraySize").value
-   document.getElementById("result2").innerHTML=validateFormat(arraySize,strPrct);
+   document.getElementById("result2").innerHTML=createArray(arraySize,strPrct);
 });
