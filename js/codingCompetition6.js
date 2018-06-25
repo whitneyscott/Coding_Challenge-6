@@ -31,7 +31,7 @@ function updateSlider(slideAmount) {
   //get the element
   let strPrct = document.getElementById("chosen");
   //show the amount
-  let dsplStr = slideAmount = "%";
+  let dsplStr = slideAmount + "%";
   display.innerHTML=displStr;
   let pic = document.getElementById("pic");
   //set the dimensions
