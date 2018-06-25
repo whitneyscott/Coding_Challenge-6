@@ -38,7 +38,7 @@ function updateSlider(slideAmount) {
   pic.style.height=slideAmount+"%";
 }
 function createArray(arrSz,prctStr) {
-  alert("Attempting to create an array with " + arrSz + " elements and " + prctStr "% of the elements being strings.");
+  alert("Creating an array with ");
 }
 let displaytxt ="<br>"+displayNbr+displayStr+"The complete array: <br>"+JSON.stringify(slctFlat, null, 4)+"<br>";
 //why did the step above result in curly brackets?
