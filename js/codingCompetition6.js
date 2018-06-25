@@ -31,7 +31,8 @@ function updateSlider(slideAmount) {
   //get the element
   let strPrct = document.getElementById("chosen");
   //show the amount
-  display.innerHTML=slideAmount + "%";
+  let dsplStr = slideAmount = "%";
+  display.innerHTML=displStr;
   let pic = document.getElementById("pic");
   //set the dimensions
   pic.style.width=slideAmount+"%";
@@ -127,6 +128,6 @@ document.getElementById("addendbutton").addEventListener("click", function(){
 document.getElementById("arraySizeBtn").addEventListener("click", function(){
   let arraySize=document.getElementById("arraySize").value
    //document.getElementById("result2").innerHTML=createArray(arraySize,strPrct);
-   createArray(arraySize,strPrct);
+   //createArray(arraySize,strPrct);
    alert("You set array of size " + arraySize + " to " + strPrct + "% string.");
 });
