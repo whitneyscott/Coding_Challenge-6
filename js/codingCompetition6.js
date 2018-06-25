@@ -29,16 +29,16 @@ let slctFlat = _.map(flattened, function(group){
 });
 function updateSlider(slideAmount) {
   //get the element
-  let display = document.getElementById("chosen");
+  let prctDspl = document.getElementById("chosen");
   //show the amount
-  display.innerHTML=slideAmount + "%";
+  prctDspl.innerHTML=slideAmount + "%";
   let pic = document.getElementById("pic");
   //set the dimensions
   pic.style.width=slideAmount+"%";
   pic.style.height=slideAmount+"%";
 }
-function createArray(arraySize, prctStr) {
-  alert("attempting array creation");
+function createArray(arrSz,prctStr) {
+  alert("Attempting to create an array with " + arrSz + " elements and " + prctStr "% of the elements being strings.");
 }
 let displaytxt ="<br>"+displayNbr+displayStr+"The complete array: <br>"+JSON.stringify(slctFlat, null, 4)+"<br>";
 //why did the step above result in curly brackets?
@@ -124,7 +124,8 @@ document.getElementById("addendbutton").addEventListener("click", function(){
    document.getElementById("result2").innerHTML=validateFormat(input);
 });
 document.getElementById("arraySizeBtn").addEventListener("click", function(){
-  // let input=document.getElementById("targetinput").value
-  //  document.getElementById("result2").innerHTML=validateFormat(input);
-  createArray();
+  let prctStr=document.getElementById("q1slide").value
+  let arrSz=document.getElementById("arraySize").value
+    //  document.getElementById("result2").innerHTML=validateFormat(input);
+  createArray(arrSz,prctStr);
 });
