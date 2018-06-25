@@ -29,13 +29,17 @@ let slctFlat = _.map(flattened, function(group){
 });
 function updateSlider(slideAmount) {
   //get the element
-  let display = document.getElementById("chosen");
+  let strPrct = document.getElementById("chosen");
   //show the amount
-  display.innerHTML=slideAmount;
-  var pic = document.getElementById("pic");
+  display.innerHTML=slideAmount + "%";
+  let pic = document.getElementById("pic");
   //set the dimensions
   pic.style.width=slideAmount+"%";
   pic.style.height=slideAmount+"%";
+}
+function createArray(arraySize,strPrct) {
+  //get the element
+  alert("You set array of size " + arraySize + " to " + strPrct + "% string.");
 }
 let displaytxt ="<br>"+displayNbr+displayStr+"The complete array: <br>"+JSON.stringify(slctFlat, null, 4)+"<br>";
 //why did the step above result in curly brackets?
@@ -119,4 +123,8 @@ document.getElementById("convertbutton").addEventListener("click", function(){
 document.getElementById("addendbutton").addEventListener("click", function(){
   let input=document.getElementById("targetinput").value
    document.getElementById("result2").innerHTML=validateFormat(input);
+});
+document.getElementById("arraySizeBtn").addEventListener("click", function(){
+  let arraySize=document.getElementById("arraySize").value
+   document.getElementById("result2").innerHTML=validateFormat(arraySize,strPrct);
 });
