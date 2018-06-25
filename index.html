@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Resume - Scott Whitney</title>
+    <title>ZTM Coding Challenge 6 - Scott Whitney</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -16,9 +16,9 @@
     <!-- Custom fonts for this template -->
     <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href="vendor/devicons/css/devicons.min.css" rel="stylesheet">
-    <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link href='//cdn.jsdelivr.net/devicons/1.8.0/css/devicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
 
     <!-- Custom styles for this template -->
     <link href="css/resume.min.css" rel="stylesheet">
@@ -31,8 +31,8 @@
       <a class="navbar-brand js-scroll-trigger" href="#page-top">
         <span class="d-block d-lg-none">Start Bootstrap</span>
         <span class="d-none d-lg-block">
-          <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/profile.jpg" alt="">
-        </span>
+          <!-- <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="http://aslexpress.net/codingCompetition6/img/Profile.jpg" alt="Inspired man pointing toward heaven">
+                  </span> -->
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -61,7 +61,23 @@
           Sort and group duplicates.
           With separate groups for numbers and strings
           <br>
-
+          Array length:<input type="text" id="arraySize" value="100">
+          <br>
+            <br>
+          Array max:<input type="text" id="arrayMax" value="50">
+          <br>
+          Percent to convert to strings:
+          <br>
+          <div id="slider">
+           5% <input id="q1slide" type="range"
+           min="5" max="100" step="5" value="50"/>
+           100%
+          </div>
+          <div id="chosen">50%</div>
+          <br>
+          <button type = "button" id="arraySizeBtn">Create the array </button>
+          <br>
+          <br>
           <br>
           Result: 
           <br>
@@ -72,7 +88,7 @@
         <div class="my-auto">       
           <h2 class="mb-5">Question 2</h2>
           <hr>
-          Find the interger addends that result in a target number
+          Find the integer addends that result in a target number
           <br>
           <br>
           <input type="text" id="targetinput" value="10"> 
