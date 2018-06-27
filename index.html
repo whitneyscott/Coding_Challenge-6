@@ -125,23 +125,182 @@
         <div class="my-auto">
           <h2 class="mb-5">Question 3b coming here</h2>
           <hr>
-                 <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="Q3">
-        <div class="my-auto">
-          <h2 class="mb-5">Question 3</h2>
-          <hr>
-          Enter your color code - either RGB or Hex
-
-          <br>
-          rgb format: rgb(255,255,255,255)
-          hex format: #FFFFFF
-
-          <input type="text" id="colorinput" value="rgba(34, 34, 34, 1)"> <button id="convertbutton">Convert</button><br>
-          <br>
-          Result:
-          <br>
-          <span class="result" id="result3"></span>
-        </div>
-      </section>
+          <div id="wrapper">
+<div id="lcol">
+  <div id="doc">
+  <!-- #BeginEditable "doctext" -->
+  <h1>Color conversion</h1>
+  <p>Enter red, green and blue color levels (%) and press the <i>Convert</i> button:</p>
+  <form name="calcform">
+      <div class="sourceFormatDiv">
+      <label class="radio inline"> 
+          <input type="radio" name="colorformat" value="RGB" class="clrfrm" checked>
+          <span> RGB </span> 
+       </label>
+      <label class="radio inline"> 
+          <input type="radio" name="colorformat" value="HEX" class="clrfrm">
+          <span>HEX </span> 
+      </label>
+    </div>
+  <table class="calc2">
+<tr>
+      <td>Red color (R):</td>
+      <td><output for="sliderRed" type="number" min="0" max="100" name="r" id="r" class="intext" placeholder="0" tabindex="2" value="0" oninput="onnumber(this,1)">0</output>%</td>
+      <td><div class="sliderContainer" id="red"><input class="clrSldr" value="0" id="sliderRed" type="range" min="0" max="100" step="1"/></div></td>
+    </tr>
+    <tr>
+      <td>Green color (G):</td>
+      <td><output for="sliderGreen" type="number" min="0" max="100" name="g" id="g" class="intext" placeholder="0" tabindex="2" oninput="onnumber(this,2)"></output>%</td>
+      <td><div class="sliderContainer" id="green"><input class="clrSldr" id="sliderGreen" type="range" min="0" max="100" step="1"slide="refreshSwatch()" change="refreshSwatch()" value="0" /></div></td>
+    </tr>
+    <tr>
+      <td>Blue color (B):</td>
+      <td><output for="sliderBlue" type="number" min="0" max="100" name="b" id="b" class="intext" placeholder="0" tabindex="3" oninput="onnumber(this,3)" ></output>%</td>
+      <td><div class="sliderContainer" id="blue"><input class="clrSldr" id="sliderBlue" type="range" min="0" max="100" step="1"slide="refreshSwatch()" change="refreshSwatch()" value="0" /></div></td>
+    </tr>
+    <tr>
+      <td>Color preview:</td>
+      <td colspan="2"><div id="swatch" class="ui-widget-content ui-corner-all"></div></td>
+    </tr>
+  <tr>
+      <td>Source color code:</td>
+      <td colspan="2"><input type="text" name="source" id="source" class="outtext" tabindex="7" readonly></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+        <td colspan="2">
+        <button type="button" title="Convert" class="btn" tabindex="4" id=convertbtn alt=""> Convert</button>
+        <button type="reset" title="Reset" class="btn" tabindex="5" onclick="clr()"> Reset</button>
+        </td>
+    </tr>
+<!--    <tr>
+      <td>Hex color code:</td>
+      <td colspan="2"><input type="text" name="hex" id="hex" class="outtext" tabindex="7" readonly></td>
+    </tr>
+    <tr>
+      <td>RGB color code:</td>
+      <td colspan="2"><input type="text" name="rgb" id="rgb" class="outtext" tabindex="8" readonly></td>
+    </tr> -->
+    <tr>
+      <td>Converted code:</td>
+      <td colspan="2"><input type="text" name="converted" id="converted" class="outtext" tabindex="8" readonly></td>
+    </tr>
+  </table>
+  </form>     
+  <h2>RGB to Hex color table</h2>
+  <table class="dtable">
+    <tr>
+      <th>Color</th>
+      <th>Color<p>name</th>
+      <th>(R,G,B)</th>
+      <th>Hex</th>
+    </tr>
+    <tr>
+      <td style="background-color:#000000">&nbsp;</td>
+      <td>Black</td>
+      <td>(0,0,0)</td>
+      <td>#000000</td>
+    </tr>
+    <tr>
+      <td style="background-color:#FFFFFF">&nbsp;</td>
+      <td>White</td>
+      <td>(255,255,255)</td>
+      <td>#FFFFFF</td>
+    </tr>
+    <tr>
+      <td style="background-color:#FF0000">&nbsp;</td>
+      <td>Red</td>
+      <td>(255,0,0)</td>
+      <td>#FF0000</td>
+    </tr>
+    <tr>
+      <td style="background-color:#00FF00">&nbsp;</td>
+      <td>Lime</td>
+      <td>(0,255,0)</td>
+      <td>#00FF00</td>
+    </tr>
+    <tr>
+      <td style="background-color:#0000FF">&nbsp;</td>
+      <td>Blue</td>
+      <td>(0,0,255)</td>
+      <td>#0000FF</td>
+    </tr>
+    <tr>
+      <td style="background-color:#FFFF00">&nbsp;</td>
+      <td>Yellow</td>
+      <td>(255,255,0)</td>
+      <td>#FFFF00</td>
+    </tr>
+    <tr>
+      <td style="background-color:#00FFFF">&nbsp;</td>
+      <td>Cyan</td>
+      <td>(0,255,255)</td>
+      <td>#00FFFF</td>
+    </tr>
+    <tr>
+      <td style="background-color:#FF00FF">&nbsp;</td>
+      <td>Magenta</td>
+      <td>(255,0,255)</td>
+      <td>#FF00FF</td>
+    </tr>
+    <tr>
+      <td style="background-color:#C0C0C0">&nbsp;</td>
+      <td>Silver</td>
+      <td>(192,192,192)</td>
+      <td>#C0C0C0</td>
+    </tr>
+    <tr>
+      <td style="background-color:#808080">&nbsp;</td>
+      <td>Gray</td>
+      <td>(128,128,128)</td>
+      <td>#808080</td>
+    </tr>
+    <tr>
+      <td style="background-color:#800000">&nbsp;</td>
+      <td>Maroon</td>
+      <td>(128,0,0)</td>
+      <td>#800000</td>
+    </tr>
+    <tr>
+      <td style="background-color:#808000">&nbsp;</td>
+      <td>Olive</td>
+      <td>(128,128,0)</td>
+      <td>#808000</td>
+    </tr>
+    <tr>
+      <td style="background-color:#008000">&nbsp;</td>
+      <td>Green</td>
+      <td>(0,128,0)</td>
+      <td>#008000</td>
+    </tr>
+    <tr>
+      <td style="background-color:#800080">&nbsp;</td>
+      <td>Purple</td>
+      <td>(128,0,128)</td>
+      <td>#800080</td>
+    </tr>
+    <tr>
+      <td style="background-color:#008080">&nbsp;</td>
+      <td>Teal</td>
+      <td>(0,128,128)</td>
+      <td>#008080</td>
+    </tr>
+    <tr>
+      <td style="background-color:#000080">&nbsp;</td>
+      <td>Navy</td>
+      <td>(0,0,128)</td>
+      <td>#000080</td>
+    </tr>
+  </table>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <!-- #EndEditable -->
+  <!-- #BeginEditable "doctext2" -->
+  <!-- #EndEditable -->
+</div>
+  <!-- #EndEditable --> 
+</div>
+</div>
         </div>
       </section>
     </div>
