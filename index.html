@@ -104,24 +104,7 @@
           <span class="result" id="result2"></span>
          </div>
       </section>
-       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="Q4">
-        <div class="my-auto">
-          <h2 class="mb-5">Question 3</h2>
-          <hr>
-          Enter your color code - either RGB or Hex
-
-          <br>
-          rgb format: rgb(255,255,255,255)
-          hex format: #FFFFFF
-
-          <input type="text" id="colorinput" value="rgba(34, 34, 34, 1)"> <button id="convertbutton">Convert</button><br>
-          <br>
-          Result:
-          <br>
-          <span class="result" id="result3"></span>
-        </div>
-      </section>
-         
+       
               <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="Q3">
               <div class="my-auto">
               <div id="wrapper">
@@ -142,7 +125,7 @@
                     </label>
                   </div>
                 <table class="calc2">
-              <tr>
+                  <tr>
                     <td>Red color (R):</td>
                     <td><output for="sliderRed" type="number" min="0" max="100" name="r" id="r" class="intext" placeholder="0" tabindex="2" value="0" oninput="onnumber(this,1)">0</output>%</td>
                     <td><div class="sliderContainer" id="red"><input class="clrSldr" value="0" id="sliderRed" type="range" min="0" max="100" step="1"/></div></td>
@@ -164,22 +147,14 @@
                 <tr>
                     <td>Source color code:</td>
                     <td colspan="2"><input type="text" name="source" id="source" class="outtext" tabindex="7" readonly></td>
-                  </tr>
-                  <tr>
+                </tr>
+                <tr>
                     <td>&nbsp;</td>
-                      <td colspan="2">
+                    <td colspan="2">
                       <button type="button" title="Convert" class="btn" tabindex="4" id=convertbtn alt=""> Convert</button>
                       <button type="reset" title="Reset" class="btn" tabindex="5" onclick="clr()"> Reset</button>
-                      </td>
-                  </tr>
-              <!--    <tr>
-                    <td>Hex color code:</td>
-                    <td colspan="2"><input type="text" name="hex" id="hex" class="outtext" tabindex="7" readonly></td>
-                  </tr>
-                  <tr>
-                    <td>RGB color code:</td>
-                    <td colspan="2"><input type="text" name="rgb" id="rgb" class="outtext" tabindex="8" readonly></td>
-                  </tr> -->
+                    </td>
+                </tr>      
                   <tr>
                     <td>Converted code:</td>
                     <td colspan="2"><input type="text" name="converted" id="converted" class="outtext" tabindex="8" readonly></td>
