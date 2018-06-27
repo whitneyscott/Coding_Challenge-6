@@ -155,7 +155,7 @@ function rgb2hex(rgb){
   return result;
 }
 //***************** Question 3b
- function hexFromRGB(r, g, b) {
+  function hexFromRGB(r, g, b) {
         r=Math.floor((r/100)*255);
         g=Math.floor((g/100)*255);
         b=Math.floor((b/100)*255);
@@ -241,10 +241,11 @@ document.getElementById("sliderBlue").addEventListener("change", function(){
 });
 document.getElementById("convertbtn").addEventListener("click", function(){
     let input=document.getElementById("source").value
-    document.getElementById("converted").value=detectFormat(input);;
+    document.getElementById("converted").value=detectFormat(input);
 });
 
 //****************** The following is no longer really needed, could just hide and show the RGB and HEX elements, but for the purposes of this competition I'm including a calculation method:
+
 function hex2rgb(hex){
     hex = hex.replace('#','');
     r = parseInt(hex.substring(0,2), 16);
@@ -252,6 +253,15 @@ function hex2rgb(hex){
     b = parseInt(hex.substring(4,6), 16);
     result = 'rgba('+r+','+g+','+b+')';
     return result;
+}
+//Function to convert rgb to hex
+function rgb2hex(rgb){  
+  rgb = rgb.match(/^rgba?[\s+]?\([\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?/i);
+  result = (rgb && rgb.length === 4) ? "#" +
+  ("0" + parseInt(rgb[1],10).toString(16)).slice(-2) +
+  ("0" + parseInt(rgb[2],10).toString(16)).slice(-2) +
+  ("0" + parseInt(rgb[3],10).toString(16)).slice(-2) : '';
+  return result;
 }
 function detectFormat(input){ 
   if(input.includes("RGB")){
@@ -263,13 +273,4 @@ function detectFormat(input){
   else{
   alert("The value you entered is not correctly formatted. Make sure it starts with '#' for hex values or 'rgb' for rgb values");
   }
-}
-//Function to convert rgb to hex
-function rgb2hex(rgb){  
-  rgb = rgb.match(/^rgba?[\s+]?\([\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?/i);
-  result = (rgb && rgb.length === 4) ? "#" +
-  ("0" + parseInt(rgb[1],10).toString(16)).slice(-2) +
-  ("0" + parseInt(rgb[2],10).toString(16)).slice(-2) +
-  ("0" + parseInt(rgb[3],10).toString(16)).slice(-2) : '';
-  return result;
 }
