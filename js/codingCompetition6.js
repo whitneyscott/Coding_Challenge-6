@@ -98,6 +98,29 @@ function validateFormat(input){
   }
 
 }
+
+//add event listener for button click
+//***************** event listeners
+document.getElementById("convertbutton").addEventListener("click", function(){
+  let input=document.getElementById("colorinput").value
+   document.getElementById("result3").innerHTML=detectFormat(input);
+});
+document.getElementById("addendbutton").addEventListener("click", function(){
+  let input=document.getElementById("targetinput").value
+   document.getElementById("result2").innerHTML=validateFormat(input);
+});
+document.getElementById("arraySizeBtn").addEventListener("click", function(){
+  let prctStr=document.getElementById("q1slide").value;
+  let arrSz=document.getElementById("arraySize").value;  
+  let arrMx=document.getElementById("arrayMax").value;
+    //  document.getElementById("result2").innerHTML=validateFormat(input);
+  createArray(arrSz,prctStr,arrMx);
+});
+document.getElementById("q1slide").addEventListener("input", function(){
+  let prctStr=document.getElementById("q1slide").value;
+  document.getElementById("chosen").innerHTML=prctStr+"%"
+});
+
 //***************** Question 3
 //Really - can't compete with this: https://www.rapidtables.com/convert/color/rgb-to-hex.html
 //convert hex to rgb
@@ -131,24 +154,3 @@ function rgb2hex(rgb){
   //document.getElementById("result").innerHTML=result;
   return result;
 }
-//add event listener for button click
-//***************** event listeners
-document.getElementById("convertbutton").addEventListener("click", function(){
-  let input=document.getElementById("colorinput").value
-   document.getElementById("result3").innerHTML=detectFormat(input);
-});
-document.getElementById("addendbutton").addEventListener("click", function(){
-  let input=document.getElementById("targetinput").value
-   document.getElementById("result2").innerHTML=validateFormat(input);
-});
-document.getElementById("arraySizeBtn").addEventListener("click", function(){
-  let prctStr=document.getElementById("q1slide").value;
-  let arrSz=document.getElementById("arraySize").value;  
-  let arrMx=document.getElementById("arrayMax").value;
-    //  document.getElementById("result2").innerHTML=validateFormat(input);
-  createArray(arrSz,prctStr,arrMx);
-});
-document.getElementById("q1slide").addEventListener("input", function(){
-  let prctStr=document.getElementById("q1slide").value;
-  document.getElementById("chosen").innerHTML=prctStr+"%"
-});
