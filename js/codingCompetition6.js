@@ -121,39 +121,7 @@ document.getElementById("q1slide").addEventListener("input", function(){
   document.getElementById("chosen").innerHTML=prctStr+"%"
 });
 
-//***************** Question 3
-//Really - can't compete with this: https://www.rapidtables.com/convert/color/rgb-to-hex.html
-//convert hex to rgb
-function hex2rgb(hex,opacity){
-    hex = hex.replace('#','');
-    r = parseInt(hex.substring(0,2), 16);
-    g = parseInt(hex.substring(2,4), 16);
-    b = parseInt(hex.substring(4,6), 16);
-    result = 'rgb('+r+','+g+','+b+')';
-    //document.getElementById("result").innerHTML = result;
-    return result;
-}
-function detectFormat(input){ 
-  if(input.includes("rgb")){
-    return rgb2hex(input);
-  }
-  else if(input.includes("#")){
-     return hex2rgb(input);
-  }
-  else{
-  alert("The value you entered is not correctly formatted. Make sure it starts with '#' for hex values or 'rgb' for rgb values");
-  }
-}
-//Function to convert rgb to hex
-function rgb2hex(rgb){  
-  rgb = rgb.match(/^rgba?[\s+]?\([\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?/i);
-  result = (rgb && rgb.length === 4) ? "#" +
-  ("0" + parseInt(rgb[1],10).toString(16)).slice(-2) +
-  ("0" + parseInt(rgb[2],10).toString(16)).slice(-2) +
-  ("0" + parseInt(rgb[3],10).toString(16)).slice(-2) : '';
-  //document.getElementById("result").innerHTML=result;
-  return result;
-}
+
 //***************** Question 3b
   function hexFromRGB(r, g, b) {
         r=Math.floor((r/100)*255);
