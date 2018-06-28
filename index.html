@@ -61,251 +61,249 @@
     </nav>
     <div id="wrapper">
       <div class="container-fluid p-0">
-        <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="Q1">
-          <div class="my-auto">
-            <h2 class="mb-5">Question 1</h2>
-            <hr>
-            Sort and group duplicates.
-            With separate groups for numbers and strings
-            <br>
-            Array length:<input type="text" id="arraySize" value="100">
-            <br>
+        <div id="lcol">
+          <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="Q1">
+            <div class="my-auto">
+              <h2 class="mb-5">Question 1</h2>
+              <hr>
+              Sort and group duplicates.
+              With separate groups for numbers and strings
               <br>
-            Array max:<input type="text" id="arrayMax" value="50">
-            <br>
-            Percent to convert to strings:
-            <br>
-            <div id="slider">
-             5% <input id="q1slide" type="range"
-             min="5" max="100" step="5" value="50"/>
-             100%
-            </div>
-            <div id="chosen">50%</div>
-            <br>
-            <button type = "button" id="arraySizeBtn">Create the array </button>
-            <br>
-            <br>
-            <br>
-            Result: 
-            <br>
-            <span class="result" id="result1"></span>
-           </div>
-        </section>
-        <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="Q2">
-          <div class="my-auto">       
-            <h2 class="mb-5">Question 2</h2>
-            <hr>
-            Find the integer addends that result in a target number
-            <br>
-            <br>
-            <input type="text" id="targetinput" value="10"> 
-            <button type = "button" id="addendbutton">Find addends </button><br>
-            <br>
-            Result:
-            <br>
-            <span class="result" id="result2"></span>
-           </div>
-        </section>    
-        <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="Q3">
-          <div class="my-auto">
-            
-              <div id="lcol">
-                <div id="doc">
-                <!-- #BeginEditable "doctext" -->
-                  <h2 class="mb-5">Question 3</h2>
-                  <p>Enter red, green and blue color levels (%) and press the <i>Convert</i> button:</p>
-                  <form name="calcform">
-                      <div class="sourceFormatDiv">
-                      <label class="radio inline"> 
-                          <input type="radio" name="colorformat" value="RGB" class="clrfrm" checked>
-                          <span> RGB </span> 
-                       </label>
-                      <label class="radio inline"> 
-                          <input type="radio" name="colorformat" value="HEX" class="clrfrm">
-                          <span>HEX </span> 
-                      </label>
-                    </div><!--sourceFormatDiv-->
-                  <table class="calc2">
-                    <tr>
-                      <td>Red color (R):</td>
-                      <td><output for="sliderRed" type="number" min="0" max="100" name="r" id="r" class="intext" placeholder="0" tabindex="2" value="0" oninput="onnumber(this,1)">0</output>%</td>
-                      <td><div class="sliderContainer" id="red"><input class="clrSldr" value="0" id="sliderRed" type="range" min="0" max="100" step="1"/></div></td>
-                    </tr>
-                    <tr>
-                      <td>Green color (G):</td>
-                      <td><output for="sliderGreen" type="number" min="0" max="100" name="g" id="g" class="intext" placeholder="0" tabindex="2" oninput="onnumber(this,2)">0</output>%</td>
-                      <td><div class="sliderContainer" id="green"><input class="clrSldr" id="sliderGreen" type="range" min="0" max="100" step="1"slide="refreshSwatch()" change="refreshSwatch()" value="0" /></div></td>
-                    </tr>
-                    <tr>
-                      <td>Blue color (B):</td>
-                      <td><output for="sliderBlue" type="number" min="0" max="100" name="b" id="b" class="intext" placeholder="0" tabindex="3" oninput="onnumber(this,3)" >0</output>%</td>
-                      <td><div class="sliderContainer" id="blue"><input class="clrSldr" id="sliderBlue" type="range" min="0" max="100" step="1"slide="refreshSwatch()" change="refreshSwatch()" value="0" /></div></td>
-                    </tr>
-                    <tr>
-                      <td>Color preview:</td>
-                      <td colspan="2"><div id="swatch" class="ui-widget-content ui-corner-all"></div></td>
-                    </tr>
-                    <tr><!--something amiss here-->
-                        <td>Source color code:</td>
-                        <td colspan="2"><input type="text" name="source" id="source" class="outtext" tabindex="7" readonly></td>
-                    </tr>
-                    <tr>
-                        <td>&nbsp;</td>
-                        <td colspan="2">
-                          <button type="button" title="Convert" class="btn" tabindex="4" id=convertbtn alt=""> Convert</button>
-                          <button type="reset" title="Reset" class="btn" tabindex="5" onclick="clr()"> Reset</button>
-                        </td>
-                    </tr>      
+              Array length:<input type="text" id="arraySize" value="100">
+              <br>
+                <br>
+              Array max:<input type="text" id="arrayMax" value="50">
+              <br>
+              Percent to convert to strings:
+              <br>
+              <div id="slider">
+               5% <input id="q1slide" type="range"
+               min="5" max="100" step="5" value="50"/>
+               100%
+              </div>
+              <div id="chosen">50%</div>
+              <br>
+              <button type = "button" id="arraySizeBtn">Create the array </button>
+              <br>
+              <br>
+              <br>
+              Result: 
+              <br>
+              <span class="result" id="result1"></span>
+             </div>
+          </section>
+          <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="Q2">
+            <div class="my-auto">       
+              <h2 class="mb-5">Question 2</h2>
+              <hr>
+              Find the integer addends that result in a target number
+              <br>
+              <br>
+              <input type="text" id="targetinput" value="10"> 
+              <button type = "button" id="addendbutton">Find addends </button><br>
+              <br>
+              Result:
+              <br>
+              <span class="result" id="result2"></span>
+             </div>
+          </section>    
+          <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="Q3">
+            <div class="my-auto">     
+                  <div id="doc">
+                  <!-- #BeginEditable "doctext" -->
+                    <h2 class="mb-5">Question 3</h2>
+                    <p>Enter red, green and blue color levels (%) and press the <i>Convert</i> button:</p>
+                    <form name="calcform">
+                        <div class="sourceFormatDiv">
+                        <label class="radio inline"> 
+                            <input type="radio" name="colorformat" value="RGB" class="clrfrm" checked>
+                            <span> RGB </span> 
+                         </label>
+                        <label class="radio inline"> 
+                            <input type="radio" name="colorformat" value="HEX" class="clrfrm">
+                            <span>HEX </span> 
+                        </label>
+                      </div><!--sourceFormatDiv-->
+                    <table class="calc2">
                       <tr>
-                        <td>Converted code:</td>
-                        <td colspan="2"><input type="text" name="converted" id="converted" class="outtext" tabindex="8" readonly></td>
+                        <td>Red color (R):</td>
+                        <td><output for="sliderRed" type="number" min="0" max="100" name="r" id="r" class="intext" placeholder="0" tabindex="2" value="0" oninput="onnumber(this,1)">0</output>%</td>
+                        <td><div class="sliderContainer" id="red"><input class="clrSldr" value="0" id="sliderRed" type="range" min="0" max="100" step="1"/></div></td>
                       </tr>
-                  </table>
-                  </form>     
-                  <h2>RGB to Hex color table</h2>
-                  <table class="dtable">
-                    <tr>
-                      <th>Color</th>
-                      <th>Color<p>name</th>
-                      <th>(R,G,B)</th>
-                      <th>Hex</th>
-                    </tr>
-                    <tr>
-                      <td style="background-color:#000000">&nbsp;</td>
-                      <td>Black</td>
-                      <td>(0,0,0)</td>
-                      <td>#000000</td>
-                    </tr>
-                    <tr>
-                      <td style="background-color:#FFFFFF">&nbsp;</td>
-                      <td>White</td>
-                      <td>(255,255,255)</td>
-                      <td>#FFFFFF</td>
-                    </tr>
-                    <tr>
-                      <td style="background-color:#FF0000">&nbsp;</td>
-                      <td>Red</td>
-                      <td>(255,0,0)</td>
-                      <td>#FF0000</td>
-                    </tr>
-                    <tr>
-                      <td style="background-color:#00FF00">&nbsp;</td>
-                      <td>Lime</td>
-                      <td>(0,255,0)</td>
-                      <td>#00FF00</td>
-                    </tr>
-                    <tr>
-                      <td style="background-color:#0000FF">&nbsp;</td>
-                      <td>Blue</td>
-                      <td>(0,0,255)</td>
-                      <td>#0000FF</td>
-                    </tr>
-                    <tr>
-                      <td style="background-color:#FFFF00">&nbsp;</td>
-                      <td>Yellow</td>
-                      <td>(255,255,0)</td>
-                      <td>#FFFF00</td>
-                    </tr>
-                    <tr>
-                      <td style="background-color:#00FFFF">&nbsp;</td>
-                      <td>Cyan</td>
-                      <td>(0,255,255)</td>
-                      <td>#00FFFF</td>
-                    </tr>
-                    <tr>
-                      <td style="background-color:#FF00FF">&nbsp;</td>
-                      <td>Magenta</td>
-                      <td>(255,0,255)</td>
-                      <td>#FF00FF</td>
-                    </tr>
-                    <tr>
-                      <td style="background-color:#C0C0C0">&nbsp;</td>
-                      <td>Silver</td>
-                      <td>(192,192,192)</td>
-                      <td>#C0C0C0</td>
-                    </tr>
-                    <tr>
-                      <td style="background-color:#808080">&nbsp;</td>
-                      <td>Gray</td>
-                      <td>(128,128,128)</td>
-                      <td>#808080</td>
-                    </tr>
-                    <tr>
-                      <td style="background-color:#800000">&nbsp;</td>
-                      <td>Maroon</td>
-                      <td>(128,0,0)</td>
-                      <td>#800000</td>
-                    </tr>
-                    <tr>
-                      <td style="background-color:#808000">&nbsp;</td>
-                      <td>Olive</td>
-                      <td>(128,128,0)</td>
-                      <td>#808000</td>
-                    </tr>
-                    <tr>
-                      <td style="background-color:#008000">&nbsp;</td>
-                      <td>Green</td>
-                      <td>(0,128,0)</td>
-                      <td>#008000</td>
-                    </tr>
-                    <tr>
-                      <td style="background-color:#800080">&nbsp;</td>
-                      <td>Purple</td>
-                      <td>(128,0,128)</td>
-                      <td>#800080</td>
-                    </tr>
-                    <tr>
-                      <td style="background-color:#008080">&nbsp;</td>
-                      <td>Teal</td>
-                      <td>(0,128,128)</td>
-                      <td>#008080</td>
-                    </tr>
-                    <tr>
-                      <td style="background-color:#000080">&nbsp;</td>
-                      <td>Navy</td>
-                      <td>(0,0,128)</td>
-                      <td>#000080</td>
-                    </tr>
-                  </table>
-                  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-                  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+                      <tr>
+                        <td>Green color (G):</td>
+                        <td><output for="sliderGreen" type="number" min="0" max="100" name="g" id="g" class="intext" placeholder="0" tabindex="2" oninput="onnumber(this,2)">0</output>%</td>
+                        <td><div class="sliderContainer" id="green"><input class="clrSldr" id="sliderGreen" type="range" min="0" max="100" step="1"slide="refreshSwatch()" change="refreshSwatch()" value="0" /></div></td>
+                      </tr>
+                      <tr>
+                        <td>Blue color (B):</td>
+                        <td><output for="sliderBlue" type="number" min="0" max="100" name="b" id="b" class="intext" placeholder="0" tabindex="3" oninput="onnumber(this,3)" >0</output>%</td>
+                        <td><div class="sliderContainer" id="blue"><input class="clrSldr" id="sliderBlue" type="range" min="0" max="100" step="1"slide="refreshSwatch()" change="refreshSwatch()" value="0" /></div></td>
+                      </tr>
+                      <tr>
+                        <td>Color preview:</td>
+                        <td colspan="2"><div id="swatch" class="ui-widget-content ui-corner-all"></div></td>
+                      </tr>
+                      <tr><!--something amiss here-->
+                          <td>Source color code:</td>
+                          <td colspan="2"><input type="text" name="source" id="source" class="outtext" tabindex="7" readonly></td>
+                      </tr>
+                      <tr>
+                          <td>&nbsp;</td>
+                          <td colspan="2">
+                            <button type="button" title="Convert" class="btn" tabindex="4" id=convertbtn alt=""> Convert</button>
+                            <button type="reset" title="Reset" class="btn" tabindex="5" onclick="clr()"> Reset</button>
+                          </td>
+                      </tr>      
+                        <tr>
+                          <td>Converted code:</td>
+                          <td colspan="2"><input type="text" name="converted" id="converted" class="outtext" tabindex="8" readonly></td>
+                        </tr>
+                    </table>
+                    </form>     
+                    <h2>RGB to Hex color table</h2>
+                    <table class="dtable">
+                      <tr>
+                        <th>Color</th>
+                        <th>Color<p>name</th>
+                        <th>(R,G,B)</th>
+                        <th>Hex</th>
+                      </tr>
+                      <tr>
+                        <td style="background-color:#000000">&nbsp;</td>
+                        <td>Black</td>
+                        <td>(0,0,0)</td>
+                        <td>#000000</td>
+                      </tr>
+                      <tr>
+                        <td style="background-color:#FFFFFF">&nbsp;</td>
+                        <td>White</td>
+                        <td>(255,255,255)</td>
+                        <td>#FFFFFF</td>
+                      </tr>
+                      <tr>
+                        <td style="background-color:#FF0000">&nbsp;</td>
+                        <td>Red</td>
+                        <td>(255,0,0)</td>
+                        <td>#FF0000</td>
+                      </tr>
+                      <tr>
+                        <td style="background-color:#00FF00">&nbsp;</td>
+                        <td>Lime</td>
+                        <td>(0,255,0)</td>
+                        <td>#00FF00</td>
+                      </tr>
+                      <tr>
+                        <td style="background-color:#0000FF">&nbsp;</td>
+                        <td>Blue</td>
+                        <td>(0,0,255)</td>
+                        <td>#0000FF</td>
+                      </tr>
+                      <tr>
+                        <td style="background-color:#FFFF00">&nbsp;</td>
+                        <td>Yellow</td>
+                        <td>(255,255,0)</td>
+                        <td>#FFFF00</td>
+                      </tr>
+                      <tr>
+                        <td style="background-color:#00FFFF">&nbsp;</td>
+                        <td>Cyan</td>
+                        <td>(0,255,255)</td>
+                        <td>#00FFFF</td>
+                      </tr>
+                      <tr>
+                        <td style="background-color:#FF00FF">&nbsp;</td>
+                        <td>Magenta</td>
+                        <td>(255,0,255)</td>
+                        <td>#FF00FF</td>
+                      </tr>
+                      <tr>
+                        <td style="background-color:#C0C0C0">&nbsp;</td>
+                        <td>Silver</td>
+                        <td>(192,192,192)</td>
+                        <td>#C0C0C0</td>
+                      </tr>
+                      <tr>
+                        <td style="background-color:#808080">&nbsp;</td>
+                        <td>Gray</td>
+                        <td>(128,128,128)</td>
+                        <td>#808080</td>
+                      </tr>
+                      <tr>
+                        <td style="background-color:#800000">&nbsp;</td>
+                        <td>Maroon</td>
+                        <td>(128,0,0)</td>
+                        <td>#800000</td>
+                      </tr>
+                      <tr>
+                        <td style="background-color:#808000">&nbsp;</td>
+                        <td>Olive</td>
+                        <td>(128,128,0)</td>
+                        <td>#808000</td>
+                      </tr>
+                      <tr>
+                        <td style="background-color:#008000">&nbsp;</td>
+                        <td>Green</td>
+                        <td>(0,128,0)</td>
+                        <td>#008000</td>
+                      </tr>
+                      <tr>
+                        <td style="background-color:#800080">&nbsp;</td>
+                        <td>Purple</td>
+                        <td>(128,0,128)</td>
+                        <td>#800080</td>
+                      </tr>
+                      <tr>
+                        <td style="background-color:#008080">&nbsp;</td>
+                        <td>Teal</td>
+                        <td>(0,128,128)</td>
+                        <td>#008080</td>
+                      </tr>
+                      <tr>
+                        <td style="background-color:#000080">&nbsp;</td>
+                        <td>Navy</td>
+                        <td>(0,0,128)</td>
+                        <td>#000080</td>
+                      </tr>
+                    </table>
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+                    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+                    <!-- #EndEditable -->
+                    <!-- #BeginEditable "doctext2" -->
+                    <!-- #EndEditable -->
+                  </div><!--doc-->
                   <!-- #EndEditable -->
-                  <!-- #BeginEditable "doctext2" -->
-                  <!-- #EndEditable -->
-                </div><!--doc-->
-                <!-- #EndEditable --> 
-              </div><!--lcol-->
-            
-          </div><!--my-auto-->
-        </section>
-        <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="Lessons Learned">
-          <div class="my-auto">       
-            <h2 class="mb-5">Lessons I learned from this competition:</h2>
-            <UL>
-              <li>JSfiddle saves time at initial developement stage</li>
-              <li>Use CDN - it's more flexible when you move things around</li>
-              <li>BE CAREFUL with event listeners. If you delete the html element, it can cause all the JS to stop working</li>
-              <li>NOW I'm starting to udnerstand the importance of separation of concerns</li>
-              <li>There are some great tools for styling sliders - too bad my CSS is not working yet to show the cool slider styling!</li>
-              <li>gh-pages is a great way to check how the git hub files are working, but you I had to close the browser every time. There must be some workaround...</li>
-              <li>rawgit may be the workaround, but I'm too new with it</li>
-              <li>underscore.js is cool stuff! It especially helped with grouping my arrays in q1</li>
-            </UL>
-           </div>
-        </section>
-        <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="To Do">
-          <div class="my-auto">       
-            <h2 class="mb-5">Things I would like to do:</h2>
-            <UL>
-                <li>Convert functions to arrow functions</li>
-                <li>Get CSS working for the color converter (q3)</li>
-                <li>Try chaining functions with underscore</li>
-                <li>Add a timer and try various methods for the array sorting, including old school for each loops</li>
-                <li>Get my profile picture working. Start it with the thinking picture, as I go to each question. Change it to inspired picture as the results display</li>
-            </UL>
-           </div>
-        </section>
-      </div><!--Class Container -->
+            </div><!--my-auto-->
+          </section>
+          <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="Lessons Learned">
+            <div class="my-auto">       
+              <h2 class="mb-5">Lessons I learned from this competition:</h2>
+              <UL>
+                <li>JSfiddle saves time at initial developement stage</li>
+                <li>Use CDN - it's more flexible when you move things around</li>
+                <li>BE CAREFUL with event listeners. If you delete the html element, it can cause all the JS to stop working</li>
+                <li>NOW I'm starting to udnerstand the importance of separation of concerns</li>
+                <li>There are some great tools for styling sliders - too bad my CSS is not working yet to show the cool slider styling!</li>
+                <li>gh-pages is a great way to check how the git hub files are working, but you I had to close the browser every time. There must be some workaround...</li>
+                <li>rawgit may be the workaround, but I'm too new with it</li>
+                <li>underscore.js is cool stuff! It especially helped with grouping my arrays in q1</li>
+              </UL>
+             </div>
+          </section>
+          <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="To Do">
+            <div class="my-auto">       
+              <h2 class="mb-5">Things I would like to do:</h2>
+              <UL>
+                  <li>Convert functions to arrow functions</li>
+                  <li>Get CSS working for the color converter (q3)</li>
+                  <li>Try chaining functions with underscore</li>
+                  <li>Add a timer and try various methods for the array sorting, including old school for each loops</li>
+                  <li>Get my profile picture working. Start it with the thinking picture, as I go to each question. Change it to inspired picture as the results display</li>
+              </UL>
+             </div>
+          </section>
+        </div><!--Class Container -->
+      </div><!--lcol-->
     </div><!--Wrapper-->
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
