@@ -2,33 +2,34 @@
 //let arr = [1,2,4,591,392,"392",391,2,5,10,2,"1","1",1,20,20,"20","20"];
 
 function createArray(arrSz,prctStr,arrMx) {
-let j = 0;
-let i = 0
-let min = 0;
-let max = arrMx;
-let arr = [];
-let randnum = 0;
-let nbrStrings = (prctStr/100)*arrSz;
-while(j < arrSz)
-  {
-    randnum = Math.floor(Math.random()*(max));
-    if(i<nbrStrings){
-      randnum = randnum.toString();
+  // alert("Array size: "+arrSz+"\n Percent string: "+prctStr+"\n Array Max value: "+arrMx);
+  let j = 0;
+  let i = 0
+  let min = 0;
+  let max = arrMx;
+  let arr = [];
+  let randnum = 0;
+  let nbrStrings = (prctStr/100)*arrSz;
+  while(j < arrSz)
+    {
+      randnum = Math.floor(Math.random()*(max));
+      if(i<nbrStrings){
+        randnum = randnum.toString();
+      }
+      i++;
+      arr.push(randnum);
+      j++;
     }
-    i++;
-    arr.push(randnum);
-    j++;
-  }
-let groupByArr = _.groupBy(arr, function(val){ return typeof(val); } );
-//requires underscore.js package
-let output = Object.values(groupByArr);//gets rid of useless indexes
-let subDiv = _.map(output, function (nested) {
-    return  _.groupBy(nested, function(element){return element;});
-});
+  let groupByArr = _.groupBy(arr, function(val){ return typeof(val); } );
+  //requires underscore.js package
+  let output = Object.values(groupByArr);//gets rid of useless indexes
+  let subDiv = _.map(output, function (nested) {
+      return  _.groupBy(nested, function(element){return element;});
+  });
 
-let cleaned = _.map(subDiv, function (nests) {
-  return Object.values(nests);
-});
+  let cleaned = _.map(subDiv, function (nests) {
+    return Object.values(nests);
+  });
 let numArr = cleaned[1];
 let strArr = cleaned[0];
 console.log("numbers: ", numArr);
@@ -64,6 +65,7 @@ let displaytxt =rawStr + displayNbr + displayStr;
 console.log("Subdivided groups: ",subDiv); */
 console.log("The raw array: ",arr)
 document.getElementById("result1").innerHTML=displaytxt;
+document.getElementById("result1").value=displaytxt;
 }
 
 //***************** Question 2
@@ -98,20 +100,103 @@ function validateFormat(input){
   }
 
 }
-//***************** Question 3
-//Really - can't compete with this: https://www.rapidtables.com/convert/color/rgb-to-hex.html
-//convert hex to rgb
-function hex2rgb(hex,opacity){
+//***************** Question 3b
+  function hexFromRGB(r, g, b) {
+        r=Math.floor((r/100)*255);
+        g=Math.floor((g/100)*255);
+        b=Math.floor((b/100)*255);
+        let rgb = [r,g,b];
+        let hex = [
+          r.toString( 16 ),
+          g.toString( 16 ),
+          b.toString( 16 )
+        ];
+        $.each( hex, function( nr, val ) {
+          if ( val.length === 1 ) {
+            hex[ nr ] = "0" + val;
+          }
+        });
+        let codes = [hex,rgb]
+        //return hex.join( "" ).toUpperCase();
+        
+        return(codes);
+      }
+
+function onnumber(obj,n)
+  {
+    let r=$("#r").val();
+    let g=$("#g").val();
+    let b=$("#b").val();
+    if( n==1 )
+      $("#red").slider("value", r);
+    else if( n==2 )
+      $("#green").slider("value", g);
+    else
+      $("#blue").slider("value", b);
+    //refreshSwatch();
+    //calc();
+  }
+function refreshSwatch() {
+  let sourceFormat =$('input[name=colorformat]:checked').val();
+/*     if(!selected.val()){
+        alert('No color selected!')
+    }
+    else{
+        var selectedValue = selected.val();
+        var selectedName = selected.siblings().text();
+        alert("Color format: " + selectedName + "\r\nValue: " + selectedValue );
+    } */
+  let red = document.querySelector('#sliderRed').value;
+  let green = document.querySelector('#sliderGreen').value;
+  let blue = document.querySelector('#sliderBlue').value;
+  let clrcodes =  hexFromRGB( red, green, blue ); 
+  let hex = clrcodes[0].join( "" ).toUpperCase();
+  let rgb = clrcodes[1].join();
+  
+  $( "#swatch" ).css( "background-color", "#" + hex );
+  document.querySelector("#r").value = red;
+  document.querySelector("#g").value = green;
+  document.querySelector("#b").value = blue;
+if(sourceFormat==="RGB"){
+document.getElementById("source").value = "RGB("+rgb+")";
+document.getElementById("source").innerHTML = "("+rgb+")";
+}
+else{
+document.getElementById("source").value = "#"+hex;
+document.getElementById("source").innerHTML = "#"+hex;
+}
+document.getElementById("rgb").value = "RGB("+rgb+")";
+document.getElementById("rgb").innerHTML = "("+rgb+")";
+document.getElementById("hex").value = "#"+hex;
+document.getElementById("hex").innerHTML = "#"+hex;
+}
+
+
+function calc(){
+  alert("RGB: "+rgb + " HEX: " +hex);
+}
+
+//****************** The following is no longer really needed, could just hide and show the RGB and HEX elements, but for the purposes of this competition I'm including a calculation method:
+
+function hex2rgb(hex){
     hex = hex.replace('#','');
     r = parseInt(hex.substring(0,2), 16);
     g = parseInt(hex.substring(2,4), 16);
     b = parseInt(hex.substring(4,6), 16);
-    result = 'rgb('+r+','+g+','+b+')';
-    //document.getElementById("result").innerHTML = result;
+    result = 'rgba('+r+','+g+','+b+')';
     return result;
 }
+//Function to convert rgb to hex
+function rgb2hex(rgb){  
+  rgb = rgb.match(/^rgba?[\s+]?\([\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?/i);
+  result = (rgb && rgb.length === 4) ? "#" +
+  ("0" + parseInt(rgb[1],10).toString(16)).slice(-2) +
+  ("0" + parseInt(rgb[2],10).toString(16)).slice(-2) +
+  ("0" + parseInt(rgb[3],10).toString(16)).slice(-2) : '';
+  return result;
+}
 function detectFormat(input){ 
-  if(input.includes("rgb")){
+  if(input.includes("RGB")){
     return rgb2hex(input);
   }
   else if(input.includes("#")){
@@ -121,34 +206,31 @@ function detectFormat(input){
   alert("The value you entered is not correctly formatted. Make sure it starts with '#' for hex values or 'rgb' for rgb values");
   }
 }
-//Function to convert rgb to hex
-function rgb2hex(rgb){  
-  rgb = rgb.match(/^rgba?[\s+]?\([\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?/i);
-  result = (rgb && rgb.length === 4) ? "#" +
-  ("0" + parseInt(rgb[1],10).toString(16)).slice(-2) +
-  ("0" + parseInt(rgb[2],10).toString(16)).slice(-2) +
-  ("0" + parseInt(rgb[3],10).toString(16)).slice(-2) : '';
-  //document.getElementById("result").innerHTML=result;
-  return result;
-}
-//add event listener for button click
 //***************** event listeners
-document.getElementById("convertbutton").addEventListener("click", function(){
-  let input=document.getElementById("colorinput").value
-   document.getElementById("result3").innerHTML=detectFormat(input);
-});
 document.getElementById("addendbutton").addEventListener("click", function(){
   let input=document.getElementById("targetinput").value
    document.getElementById("result2").innerHTML=validateFormat(input);
 });
-document.getElementById("arraySizeBtn").addEventListener("click", function(){
+document.getElementById("arraySizeBtn").addEventListener("click", function(){  
   let prctStr=document.getElementById("q1slide").value;
   let arrSz=document.getElementById("arraySize").value;  
   let arrMx=document.getElementById("arrayMax").value;
-    //  document.getElementById("result2").innerHTML=validateFormat(input);
   createArray(arrSz,prctStr,arrMx);
 });
 document.getElementById("q1slide").addEventListener("input", function(){
   let prctStr=document.getElementById("q1slide").value;
-  document.getElementById("chosen").innerHTML=prctStr+"%"
+  document.getElementById("chosen").innerHTML=prctStr;
+});
+document.getElementById("sliderRed").addEventListener("change", function(){
+    refreshSwatch();
+});
+document.getElementById("sliderGreen").addEventListener("change", function(){
+    refreshSwatch();
+});
+document.getElementById("sliderBlue").addEventListener("change", function(){
+    refreshSwatch();
+});
+document.getElementById("convertbtn").addEventListener("click", function(){
+    let input=document.getElementById("source").value
+    document.getElementById("converted").value=detectFormat(input);
 });
