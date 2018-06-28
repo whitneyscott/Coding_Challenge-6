@@ -192,7 +192,9 @@ table.calc td, .calc2 td {
   border-style: none;
   background: #e8e8e8;
 }
-
+#slider{
+  display: inline;
+}
 .calc2 select { padding:4px 2px; font-size:1.2em; font-family:Arial, Helvetica, sans-serif }
 #red, #green, #blue {
     float: left;
@@ -245,9 +247,7 @@ input[type=range]::-webkit-slider-thumb {
 input[type=range]:focus::-webkit-slider-runnable-track {
   background: #3071A9;
 }
-input[id='q1slide'] {
-  width: 50 px;
-}
+
 /*input[id='q1slide']::-webkit-slider-thumb {
     border: 2px solid #8ae234;
 }*/
