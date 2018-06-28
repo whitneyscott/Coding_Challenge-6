@@ -64,8 +64,8 @@ let displaytxt =rawStr + displayNbr + displayStr;
 /* console.log("Sorted by typeof: ", output);
 console.log("Subdivided groups: ",subDiv); */
 console.log("The raw array: ",arr)
-//document.getElementById("result1").innerHTML=displaytxt;
-document.getElementById("result1").value=displaytxt;
+document.getElementById("result1").innerHTML=displaytxt;
+//document.getElementById("result1").value=displaytxt;
 }
 
 //***************** Question 2
