@@ -210,13 +210,12 @@ document.getElementById("addendbutton").addEventListener("click", function(){
   let input=document.getElementById("targetinput").value
    document.getElementById("result2").innerHTML=validateFormat(input);
 });
-document.getElementById("arraySizeBtn").addEventListener("click", function(){
-  
+document.getElementById("arraySizeBtn").addEventListener("click", function(){  
   let prctStr=document.getElementById("q1slide").value;
   let arrSz=document.getElementById("arraySize").value;  
   let arrMx=document.getElementById("arrayMax").value;
   alert("Percent string: "+prctStr+"\n Array size: "+arrSz+"\n Array Max: "+arrMx);
-  //   //  document.getElementById("result2").innerHTML=validateFormat(input);
+  //  document.getElementById("result2").innerHTML=validateFormat(input);
   // createArray(arrSz,prctStr,arrMx);
 });
 document.getElementById("q1slide").addEventListener("input", function(){
