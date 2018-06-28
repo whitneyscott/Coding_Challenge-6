@@ -2,7 +2,7 @@
 //let arr = [1,2,4,591,392,"392",391,2,5,10,2,"1","1",1,20,20,"20","20"];
 
 function createArray(arrSz,prctStr,arrMx) {
-  alert("Array size: "+arrSz+" Percet string: "+prctStr+" Array Max value: "+arrMx);
+  alert("Array size: "+arrSz+"\n Percent string: "+prctStr+"\n Array Max value: "+arrMx);
   let j = 0;
   let i = 0
   let min = 0;
@@ -214,9 +214,7 @@ document.getElementById("arraySizeBtn").addEventListener("click", function(){
   let prctStr=document.getElementById("q1slide").value;
   let arrSz=document.getElementById("arraySize").value;  
   let arrMx=document.getElementById("arrayMax").value;
-  alert("Percent string: "+prctStr+"\n Array size: "+arrSz+"\n Array Max: "+arrMx);
-  //  document.getElementById("result2").innerHTML=validateFormat(input);
-  // createArray(arrSz,prctStr,arrMx);
+  createArray(arrSz,prctStr,arrMx);
 });
 document.getElementById("q1slide").addEventListener("input", function(){
   let prctStr=document.getElementById("q1slide").value;
