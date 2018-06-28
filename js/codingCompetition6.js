@@ -2,7 +2,7 @@
 //let arr = [1,2,4,591,392,"392",391,2,5,10,2,"1","1",1,20,20,"20","20"];
 
 function createArray(arrSz,prctStr,arrMx) {
-  alert("Array size: "+arrSz+"\n Percent string: "+prctStr+"\n Array Max value: "+arrMx);
+  // alert("Array size: "+arrSz+"\n Percent string: "+prctStr+"\n Array Max value: "+arrMx);
   let j = 0;
   let i = 0
   let min = 0;
@@ -64,7 +64,8 @@ let displaytxt =rawStr + displayNbr + displayStr;
 /* console.log("Sorted by typeof: ", output);
 console.log("Subdivided groups: ",subDiv); */
 console.log("The raw array: ",arr)
-document.getElementById("result1").innerHTML=displaytxt;
+//document.getElementById("result1").innerHTML=displaytxt;
+document.getElementById("result1").value=displaytxt;
 }
 
 //***************** Question 2
