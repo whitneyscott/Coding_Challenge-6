@@ -101,10 +101,6 @@ function validateFormat(input){
 
 //add event listener for button click
 //***************** event listeners
-document.getElementById("convertbutton").addEventListener("click", function(){
-  let input=document.getElementById("colorinput").value
-   document.getElementById("result3").innerHTML=detectFormat(input);
-});
 document.getElementById("addendbutton").addEventListener("click", function(){
   let input=document.getElementById("targetinput").value
    document.getElementById("result2").innerHTML=validateFormat(input);
