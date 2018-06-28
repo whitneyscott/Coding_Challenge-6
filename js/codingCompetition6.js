@@ -107,11 +107,12 @@ document.getElementById("addendbutton").addEventListener("click", function(){
    document.getElementById("result2").innerHTML=validateFormat(input);
 });
 document.getElementById("arraySizeBtn").addEventListener("click", function(){
-  let prctStr=document.getElementById("q1slide").value;
-  let arrSz=document.getElementById("arraySize").value;  
-  let arrMx=document.getElementById("arrayMax").value;
-    //  document.getElementById("result2").innerHTML=validateFormat(input);
-  createArray(arrSz,prctStr,arrMx);
+  alert("array size button clicked");
+  // let prctStr=document.getElementById("q1slide").value;
+  // let arrSz=document.getElementById("arraySize").value;  
+  // let arrMx=document.getElementById("arrayMax").value;
+  //   //  document.getElementById("result2").innerHTML=validateFormat(input);
+  // createArray(arrSz,prctStr,arrMx);
 });
 document.getElementById("q1slide").addEventListener("input", function(){
   let prctStr=document.getElementById("q1slide").value;
