@@ -192,9 +192,7 @@ table.calc td, .calc2 td {
   border-style: none;
   background: #e8e8e8;
 }
-#slider{
-  display: inline;
-}
+
 .calc2 select { padding:4px 2px; font-size:1.2em; font-family:Arial, Helvetica, sans-serif }
 #red, #green, #blue {
     float: left;
@@ -428,4 +426,7 @@ a {
 
 a:hover, a:focus, a:active {
   color: #824027;
+}
+#slider{
+  display: inline;
 }
