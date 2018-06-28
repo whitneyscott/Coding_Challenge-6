@@ -66,42 +66,60 @@
             <div class="my-auto">
               <h2 class="mb-5">Question 1</h2>
               <hr>
-              Sort and group duplicates.
-              With separate groups for numbers and strings
-              <br>
-              Array length:<input type="text" id="arraySize" value="100">
-              <br>
-                <br>
-              Array max:<input type="text" id="arrayMax" value="50">
-              <br>
-              Percent to convert to strings:
-              <br>
-              <div id="slider">
-                <label for="q1slide">% Strings</label><input id="q1slide" type="range" min="5" max="100" step="5" value="50"/><output for="q1slide" id="chosen">50</output>              
-              </div>
-              <br>
-              <button type = "button" id="arraySizeBtn">Create the array </button>
-              <br>
-              <br>
-              <br>
-              Result: 
-              <br>
-              <span class="result" id="result1"></span>
+              <p>Clean the room function: given an input of [1,2,4,591,392,391,2,5,10,2,1,1,1,20,20], make a function that organizes these into individual array that is ordered. For example answer(ArrayFromAbove) should return: [[1,1,1,1],[2,2,2], 4,5,10,[20,20], 391, 392,591]. Bonus: Make it so it organizes strings differently from number types. i.e. [1, "2", "3", 2] should return [[1,2], ["2", "3"]]</p>
+              <table class="calc2">
+                <tr>
+                  <td> Array length:</td>
+                  <td><input type="number" name="arraySize" id="arraySize" min="0" value="100"></td>
+                </tr>
+                <tr>
+                  <td><input type="number" name="arrayMax" id="arrayMax" min="0" value="50"></td>
+                </tr
+                <tr>
+                  <td>
+                    Use the slider to enter the percent of the array you want to convert to strings.
+                  </td>
+                </tr>
+                <tr>
+                  <td>% Strings:</td>
+                  <td><output for="q1Slide" type="number" min="0" max="100" name="chosen" id="chosen" class="intext" placeholder="0" tabindex="2" value="0">0</output>%</td>
+                  <td><div class="sliderContainer" id="q1slideDiv"><input id="q1slide" type="range" min="5" max="100" step="5" value="50"/></div></td>
+                </tr>
+                <tr>
+                  <td>
+                    <button type = "button" id="arraySizeBtn">Create the array </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Result:</td>
+                  <td><input type="text" name="result" id="result1" class="outtext" tabindex="8" readonly></td>
+                </tr>
+              </table>              
              </div>
           </section>
           <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="Q2">
             <div class="my-auto">       
               <h2 class="mb-5">Question 2</h2>
-              <hr>
-              Find the integer addends that result in a target number
-              <br>
-              <br>
-              <input type="text" id="targetinput" value="10"> 
-              <button type = "button" id="addendbutton">Find addends </button><br>
-              <br>
-              Result:
-              <br>
-              <span class="result" id="result2"></span>
+              <p>
+                Write a javascript function that takes an array of numbers and a target number. The function should find two different numbers in the array that, when added together, give the target number. For example: answer([1,2,3], 4) should return [1,3].
+              </p>
+               <form name="q2form">
+                  <table>
+                    <tr>
+                      <td>Enter a number from 1 to 100.</td>
+                      <td><input type="number" id="targetinput" value="10"></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <button type = "button" id="addendbutton">Find addends </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Result:</td>
+                      <td><input type="text" name="result" id="result2" class="outtext" tabindex="8" readonly></td>
+                    </tr>
+                  </table>                 
+               </form>
              </div>
           </section>    
           <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="Q3">
@@ -292,7 +310,6 @@
               <h2 class="mb-5">Things I would like to do:</h2>
               <UL>
                   <li>Convert functions to arrow functions</li>
-                  <li>Get CSS working for the color converter (q3)</li>
                   <li>Try chaining functions with underscore</li>
                   <li>Add a timer and try various methods for the array sorting, including old school for each loops</li>
                   <li>Get my profile picture working. Start it with the thinking picture, as I go to each question. Change it to inspired picture as the results display</li>
