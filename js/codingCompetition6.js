@@ -99,27 +99,6 @@ function validateFormat(input){
   }
 
 }
-
-//add event listener for button click
-//***************** event listeners
-document.getElementById("addendbutton").addEventListener("click", function(){
-  let input=document.getElementById("targetinput").value
-   document.getElementById("result2").innerHTML=validateFormat(input);
-});
-document.getElementById("arraySizeBtn").addEventListener("click", function(){
-  alert("array size button clicked");
-  // let prctStr=document.getElementById("q1slide").value;
-  // let arrSz=document.getElementById("arraySize").value;  
-  // let arrMx=document.getElementById("arrayMax").value;
-  //   //  document.getElementById("result2").innerHTML=validateFormat(input);
-  // createArray(arrSz,prctStr,arrMx);
-});
-document.getElementById("q1slide").addEventListener("input", function(){
-  let prctStr=document.getElementById("q1slide").value;
-  document.getElementById("chosen").innerHTML=prctStr;
-});
-
-
 //***************** Question 3b
   function hexFromRGB(r, g, b) {
         r=Math.floor((r/100)*255);
@@ -195,20 +174,6 @@ document.getElementById("hex").innerHTML = "#"+hex;
 function calc(){
   alert("RGB: "+rgb + " HEX: " +hex);
 }
-   
-document.getElementById("sliderRed").addEventListener("change", function(){
-    refreshSwatch();
-});
-document.getElementById("sliderGreen").addEventListener("change", function(){
-    refreshSwatch();
-});
-document.getElementById("sliderBlue").addEventListener("change", function(){
-    refreshSwatch();
-});
-document.getElementById("convertbtn").addEventListener("click", function(){
-    let input=document.getElementById("source").value
-    document.getElementById("converted").value=detectFormat(input);
-});
 
 //****************** The following is no longer really needed, could just hide and show the RGB and HEX elements, but for the purposes of this competition I'm including a calculation method:
 
@@ -240,3 +205,33 @@ function detectFormat(input){
   alert("The value you entered is not correctly formatted. Make sure it starts with '#' for hex values or 'rgb' for rgb values");
   }
 }
+//***************** event listeners
+document.getElementById("addendbutton").addEventListener("click", function(){
+  let input=document.getElementById("targetinput").value
+   document.getElementById("result2").innerHTML=validateFormat(input);
+});
+document.getElementById("arraySizeBtn").addEventListener("click", function(){
+  alert("array size button clicked");
+  // let prctStr=document.getElementById("q1slide").value;
+  // let arrSz=document.getElementById("arraySize").value;  
+  // let arrMx=document.getElementById("arrayMax").value;
+  //   //  document.getElementById("result2").innerHTML=validateFormat(input);
+  // createArray(arrSz,prctStr,arrMx);
+});
+document.getElementById("q1slide").addEventListener("input", function(){
+  let prctStr=document.getElementById("q1slide").value;
+  document.getElementById("chosen").innerHTML=prctStr;
+});
+document.getElementById("sliderRed").addEventListener("change", function(){
+    refreshSwatch();
+});
+document.getElementById("sliderGreen").addEventListener("change", function(){
+    refreshSwatch();
+});
+document.getElementById("sliderBlue").addEventListener("change", function(){
+    refreshSwatch();
+});
+document.getElementById("convertbtn").addEventListener("click", function(){
+    let input=document.getElementById("source").value
+    document.getElementById("converted").value=detectFormat(input);
+});
