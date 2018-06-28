@@ -246,7 +246,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
   background: #3071A9;
 }
 input[id='q1slide'] {
-  width: 200 px;
+  width: 100 px;
 }
 /*input[id='q1slide']::-webkit-slider-thumb {
     border: 2px solid #8ae234;
