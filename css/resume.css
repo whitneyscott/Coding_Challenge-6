@@ -205,14 +205,9 @@ table.calc td, .calc2 td {
     margin-top: 5px;
     margin-left: 0px;
     background-image: none;
-    }  input[type=range] {
-  height: 40px;
-  -webkit-appearance: none;
-  margin: 10px 0;
-  width: 100%;
-}
+    }  
 input[type=range] {
-  height: 38px;
+  height: 40px;
   -webkit-appearance: none;
   margin: 10px 0;
   width: 100%;
@@ -267,31 +262,11 @@ input[id='sliderBlue']::-webkit-slider-thumb {
     .calc2 tr:nth-child(4) td { margin-top:-5px; padding-bottom:8px;}
     .calc2 td:nth-child(3) { display:none;}
   }
-  @media all and (min-width: 577px) {
-    .calc2 tr:nth-child(5) { line-height:60px; }
-  }
-  ("#red, #green, #blue").slider({
-        orientation: "horizontal",
-        range: "min",
-        max: 255,
-        value: 0,
-        slide: refreshSwatch,
-        change: refreshSwatch
-      });
-
 body {
   font-family: 'Open Sans', serif;
   padding-top: 54px;
   color: #868e96;
 }
-
-@media (min-width: 992px) {
-  body {
-    padding-top: 0;
-    padding-left: 17rem;
-  }
-}
-
 h1,
 h2,
 h3,
@@ -344,18 +319,6 @@ h2 {
   font-weight: 600;
   text-transform: uppercase;
 }
-
-@media (min-width: 992px) {
-  #sideNav {
-    text-align: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    width: 17rem;
-    height: 100vh;
-  }
   #sideNav .navbar-brand {
     display: flex;
     margin: auto auto 0;
@@ -394,23 +357,6 @@ section.resume-section {
 section.resume-section .resume-item .resume-date {
   min-width: none;
 }
-
-@media (min-width: 768px) {
-  section.resume-section {
-    min-height: 100vh;
-  }
-  section.resume-section .resume-item .resume-date {
-    min-width: 18rem;
-  }
-}
-
-@media (min-width: 992px) {
-  section.resume-section {
-    padding-top: 3rem !important;
-    padding-bottom: 3rem !important;
-  }
-}
-
 .bg-primary {
   background-color: #BD5D38 !important;
 }
