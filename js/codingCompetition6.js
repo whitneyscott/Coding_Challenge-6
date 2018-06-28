@@ -2,33 +2,34 @@
 //let arr = [1,2,4,591,392,"392",391,2,5,10,2,"1","1",1,20,20,"20","20"];
 
 function createArray(arrSz,prctStr,arrMx) {
-let j = 0;
-let i = 0
-let min = 0;
-let max = arrMx;
-let arr = [];
-let randnum = 0;
-let nbrStrings = (prctStr/100)*arrSz;
-while(j < arrSz)
-  {
-    randnum = Math.floor(Math.random()*(max));
-    if(i<nbrStrings){
-      randnum = randnum.toString();
+  alert("Array size: "+arrSz+" Percet string: "+prctStr+" Array Max value: "+arrMx);
+  let j = 0;
+  let i = 0
+  let min = 0;
+  let max = arrMx;
+  let arr = [];
+  let randnum = 0;
+  let nbrStrings = (prctStr/100)*arrSz;
+  while(j < arrSz)
+    {
+      randnum = Math.floor(Math.random()*(max));
+      if(i<nbrStrings){
+        randnum = randnum.toString();
+      }
+      i++;
+      arr.push(randnum);
+      j++;
     }
-    i++;
-    arr.push(randnum);
-    j++;
-  }
-let groupByArr = _.groupBy(arr, function(val){ return typeof(val); } );
-//requires underscore.js package
-let output = Object.values(groupByArr);//gets rid of useless indexes
-let subDiv = _.map(output, function (nested) {
-    return  _.groupBy(nested, function(element){return element;});
-});
+  let groupByArr = _.groupBy(arr, function(val){ return typeof(val); } );
+  //requires underscore.js package
+  let output = Object.values(groupByArr);//gets rid of useless indexes
+  let subDiv = _.map(output, function (nested) {
+      return  _.groupBy(nested, function(element){return element;});
+  });
 
-let cleaned = _.map(subDiv, function (nests) {
-  return Object.values(nests);
-});
+  let cleaned = _.map(subDiv, function (nests) {
+    return Object.values(nests);
+  });
 let numArr = cleaned[1];
 let strArr = cleaned[0];
 console.log("numbers: ", numArr);
@@ -114,7 +115,7 @@ document.getElementById("arraySizeBtn").addEventListener("click", function(){
 });
 document.getElementById("q1slide").addEventListener("input", function(){
   let prctStr=document.getElementById("q1slide").value;
-  document.getElementById("chosen").innerHTML=prctStr+"%"
+  document.getElementById("chosen").innerHTML=prctStr;
 });
 
 
