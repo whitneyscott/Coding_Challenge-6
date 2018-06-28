@@ -211,10 +211,11 @@ document.getElementById("addendbutton").addEventListener("click", function(){
    document.getElementById("result2").innerHTML=validateFormat(input);
 });
 document.getElementById("arraySizeBtn").addEventListener("click", function(){
-  alert("array size button clicked");
-  // let prctStr=document.getElementById("q1slide").value;
-  // let arrSz=document.getElementById("arraySize").value;  
-  // let arrMx=document.getElementById("arrayMax").value;
+  
+  let prctStr=document.getElementById("q1slide").value;
+  let arrSz=document.getElementById("arraySize").value;  
+  let arrMx=document.getElementById("arrayMax").value;
+  alert("Percent string: "+prctStr+"\n Array size: "+arrSz+"\n Array Max: "+arrMx);
   //   //  document.getElementById("result2").innerHTML=validateFormat(input);
   // createArray(arrSz,prctStr,arrMx);
 });
