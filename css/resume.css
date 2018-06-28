@@ -193,7 +193,7 @@ table.calc td, .calc2 td {
 }
 
 .calc2 select { padding:4px 2px; font-size:1.2em; font-family:Arial, Helvetica, sans-serif }
-#red, #green, #blue #q1slideDiv{
+#red, #green, #blue, #q1slideDiv{
     float: left;
     clear: left;
     width: 300px;
@@ -322,7 +322,7 @@ input[id='sliderBlue']::-webkit-slider-thumb {
   ("#red, #green, #blue").slider({
         orientation: "horizontal",
         range: "min",
-        max: 255,
+        max: 100,
         value: 0,
         slide: refreshSwatch,
         change: refreshSwatch
