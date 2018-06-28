@@ -64,38 +64,40 @@
         <div id="lcol">
           <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="Q1">
             <div class="my-auto">
-              <h2 class="mb-5">Question 1</h2>
-              <hr>
-              <p>Clean the room function: given an input of [1,2,4,591,392,391,2,5,10,2,1,1,1,20,20], make a function that organizes these into individual array that is ordered. For example answer(ArrayFromAbove) should return: [[1,1,1,1],[2,2,2], 4,5,10,[20,20], 391, 392,591]. Bonus: Make it so it organizes strings differently from number types. i.e. [1, "2", "3", 2] should return [[1,2], ["2", "3"]]</p>
-              <table class="calc2">
-                <tr>
-                  <td> Array length:</td>
-                  <td><input type="number" name="arraySize" id="arraySize" min="0" value="100"></td>
-                </tr>
-                <tr>
-                  <td><input type="number" name="arrayMax" id="arrayMax" min="0" value="50"></td>
-                </tr
-                <tr>
-                  <td>
-                    Use the slider to enter the percent of the array you want to convert to strings.
-                  </td>
-                </tr>
-                <tr>
-                  <td>% Strings:</td>
-                  <td><output for="q1Slide" type="number" min="0" max="100" name="chosen" id="chosen" class="intext" placeholder="0" tabindex="2" value="0">0</output>%</td>
-                  <td><div class="sliderContainer" id="q1slideDiv"><input id="q1slide" type="range" min="5" max="100" step="5" value="50"/></div></td>
-                </tr>
-                <tr>
-                  <td>
-                    <button type = "button" id="arraySizeBtn">Create the array </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Result:</td>
-                  <td><input type="text" name="result" id="result1" class="outtext" tabindex="8" readonly></td>
-                </tr>
-              </table>              
-             </div>
+              <div id="doc">
+                  <h2 class="mb-5">Question 1</h2>
+                  <hr>
+                  <p>Clean the room function: given an input of [1,2,4,591,392,391,2,5,10,2,1,1,1,20,20], make a function that organizes these into individual array that is ordered. For example answer(ArrayFromAbove) should return: [[1,1,1,1],[2,2,2], 4,5,10,[20,20], 391, 392,591]. Bonus: Make it so it organizes strings differently from number types. i.e. [1, "2", "3", 2] should return [[1,2], ["2", "3"]]</p>
+                  <table class="calc2">
+                    <tr>
+                      <td> Array length:</td>
+                      <td><input type="number" name="arraySize" id="arraySize" min="0" value="100"></td>
+                    </tr>
+                    <tr>
+                      <td><input type="number" name="arrayMax" id="arrayMax" min="0" value="50"></td>
+                    </tr
+                    <tr>
+                      <td>
+                        Use the slider to enter the percent of the array you want to convert to strings.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>% Strings:</td>
+                      <td><output for="q1Slide" type="number" min="0" max="100" name="chosen" id="chosen" class="intext" placeholder="0" tabindex="2" value="0">0</output>%</td>
+                      <td><div class="sliderContainer" id="q1slideDiv"><input id="q1slide" type="range" min="5" max="100" step="5" value="50"/></div></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <button type = "button" id="arraySizeBtn">Create the array </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Result:</td>
+                      <td><input type="text" name="result" id="result1" class="outtext" tabindex="8" readonly></td>
+                    </tr>
+                  </table>              
+                 </div><!--Doc-->
+               </div><!--My Auto-->
           </section>
           <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="Q2">
             <div class="my-auto">       
@@ -128,18 +130,22 @@
                   <!-- #BeginEditable "doctext" -->
                     <h2 class="mb-5">Question 3</h2>
                     <p>Enter red, green and blue color levels (%) and press the <i>Convert</i> button:</p>
-                    <form name="calcform">
-                        <div class="sourceFormatDiv">
-                        <label class="radio inline"> 
-                            <input type="radio" name="colorformat" value="RGB" class="clrfrm" checked>
-                            <span> RGB </span> 
-                         </label>
-                        <label class="radio inline"> 
-                            <input type="radio" name="colorformat" value="HEX" class="clrfrm">
-                            <span>HEX </span> 
-                        </label>
-                      </div><!--sourceFormatDiv-->
+                    <form name="calcform">                        
                     <table class="calc2">
+                      <tr>
+                        <td>
+                          <div class="sourceFormatDiv">
+                            <label class="radio inline"> 
+                                <input type="radio" name="colorformat" value="RGB" class="clrfrm" checked>
+                                <span> RGB </span> 
+                            </label>
+                            <label class="radio inline"> 
+                                <input type="radio" name="colorformat" value="HEX" class="clrfrm">
+                                <span>HEX </span> 
+                            </label>
+                          </div><!--sourceFormatDiv-->
+                        </td>
+                      </tr>
                       <tr>
                         <td>Red color (R):</td>
                         <td><output for="sliderRed" type="number" min="0" max="100" name="r" id="r" class="intext" placeholder="0" tabindex="2" value="0" oninput="onnumber(this,1)">0</output>%</td>
