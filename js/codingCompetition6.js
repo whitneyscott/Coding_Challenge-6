@@ -67,7 +67,7 @@ console.log("The raw array: ",arr)
 document.getElementById("result1").innerHTML=displaytxt;
 document.getElementById("result1").value=displaytxt;
 document.getElementById("profile").src = "http://aslexpress.net/codingCompetition6/img/Inspiration.png";
-alert("Changed to Inpiration.png!");
+
 }
 
 //***************** Question 2
@@ -232,6 +232,7 @@ for(var i = 0, len = elements.length; i < len; i++) {
 document.getElementById("addendbutton").addEventListener("click", function(){
   let input=document.getElementById("targetinput").value
    document.getElementById("result2").innerHTML=validateFormat(input);
+   document.getElementById("profile").src = "http://aslexpress.net/codingCompetition6/img/Inspiration.png";
 });
 document.getElementById("arraySizeBtn").addEventListener("click", function(){  
   let prctStr=document.getElementById("q1slide").value;
@@ -255,6 +256,7 @@ document.getElementById("sliderBlue").addEventListener("change", function(){
 document.getElementById("convertbtn").addEventListener("click", function(){
     let input=document.getElementById("source").value
     document.getElementById("converted").value=detectFormat(input);
+    document.getElementById("profile").src = "http://aslexpress.net/codingCompetition6/img/Inspiration.png";
 });
 function callback(e) {
     var e = window.e || e;
