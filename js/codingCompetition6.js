@@ -66,7 +66,7 @@ console.log("Subdivided groups: ",subDiv); */
 console.log("The raw array: ",arr)
 document.getElementById("result1").innerHTML=displaytxt;
 document.getElementById("result1").value=displaytxt;
-img.src="http://aslexpress.net/codingCompetition6/img/Inspiration.png";
+document.getElementById("profile").value=displaytxt;src = "http://aslexpress.net/codingCompetition6/img/Thinking.png";
 }
 
 //***************** Question 2
@@ -85,9 +85,11 @@ function getAddends(input){
   let cleaned2 = _.map(addPairs, function (nests) {
     return Object.values(nests);
   });
+  //addPairs = Object.values(addPairs);
   return JSON.stringify(cleaned2, null, 4);
 }
 function validateFormat(input){ 
+  //alert("checking input format");
   if (isNaN(input) == true)
    {
       alert("Value must be a number.");
@@ -205,7 +207,7 @@ function detectFormat(input){
   alert("The value you entered is not correctly formatted. Make sure it starts with '#' for hex values or 'rgb' for rgb values");
   }
 }
-//********* Profile image swapping
+
 function changeImage1(id,src1,src2){
  var img=document.getElementById(id);
  if (img){
@@ -228,8 +230,7 @@ for(var i = 0, len = elements.length; i < len; i++) {
 //***************** event listeners
 document.getElementById("addendbutton").addEventListener("click", function(){
   let input=document.getElementById("targetinput").value
-   document.getElementById("result2").innerHTML=validateFormat(input);   
-    img.src="http://aslexpress.net/codingCompetition6/img/Inspiration.png";
+   document.getElementById("result2").innerHTML=validateFormat(input);
 });
 document.getElementById("arraySizeBtn").addEventListener("click", function(){  
   let prctStr=document.getElementById("q1slide").value;
@@ -253,6 +254,20 @@ document.getElementById("sliderBlue").addEventListener("change", function(){
 document.getElementById("convertbtn").addEventListener("click", function(){
     let input=document.getElementById("source").value
     document.getElementById("converted").value=detectFormat(input);
-    let img=document.getElementById("profile");
-    img.src="http://aslexpress.net/codingCompetition6/img/Inspiration.png";
 });
+function callback(e) {
+    var e = window.e || e;
+
+    if (e.target.tagName !== 'A'){
+      return;
+    }
+   else{
+    e.target.src = "http://aslexpress.net/codingCompetition6/img/Thinking.png";
+    return;
+   }    
+}
+
+if (document.addEventListener)
+    document.addEventListener('click', callback, false);
+else
+    document.attachEvent('onclick', callback);
