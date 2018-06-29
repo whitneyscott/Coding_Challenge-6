@@ -66,7 +66,8 @@ console.log("Subdivided groups: ",subDiv); */
 console.log("The raw array: ",arr)
 document.getElementById("result1").innerHTML=displaytxt;
 document.getElementById("result1").value=displaytxt;
-document.getElementById("profile").value=displaytxt;src = "http://aslexpress.net/codingCompetition6/img/Thinking.png";
+document.getElementById("profile").src = "http://aslexpress.net/codingCompetition6/img/Thinking.png";
+alert("done!");
 }
 
 //***************** Question 2
