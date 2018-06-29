@@ -67,7 +67,7 @@ console.log("The raw array: ",arr)
 document.getElementById("result1").innerHTML=displaytxt;
 document.getElementById("result1").value=displaytxt;
 document.getElementById("profile").src = "http://aslexpress.net/codingCompetition6/img/Inspiration.png";
-alert("changed to Inpiration.png!");
+alert("Changed to Inpiration.png!");
 }
 
 //***************** Question 2
