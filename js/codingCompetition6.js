@@ -66,6 +66,7 @@ console.log("Subdivided groups: ",subDiv); */
 console.log("The raw array: ",arr)
 document.getElementById("result1").innerHTML=displaytxt;
 document.getElementById("result1").value=displaytxt;
+img.src="http://aslexpress.net/codingCompetition6/img/Inspiration.png";
 }
 
 //***************** Question 2
@@ -84,11 +85,9 @@ function getAddends(input){
   let cleaned2 = _.map(addPairs, function (nests) {
     return Object.values(nests);
   });
-  //addPairs = Object.values(addPairs);
   return JSON.stringify(cleaned2, null, 4);
 }
 function validateFormat(input){ 
-  //alert("checking input format");
   if (isNaN(input) == true)
    {
       alert("Value must be a number.");
@@ -206,10 +205,31 @@ function detectFormat(input){
   alert("The value you entered is not correctly formatted. Make sure it starts with '#' for hex values or 'rgb' for rgb values");
   }
 }
+//********* Profile image swapping
+function changeImage1(id,src1,src2){
+ var img=document.getElementById(id);
+ if (img){
+  var src=img.src,p=src.slice(0,src.lastIndexOf('/'))+'/';
+  if (src==p+src1){
+   img.src=p+src2;
+  }
+  else {
+   img.src=p+src1;
+  }
+ }
+}
+let elements = document.getElementsByTagName('a');
+for(var i = 0, len = elements.length; i < len; i++) {
+    elements[i].onclick = function () {
+       let img=document.getElementById("profile");
+       img.src="http://aslexpress.net/codingCompetition6/img/Thinking.png";
+    }
+}
 //***************** event listeners
 document.getElementById("addendbutton").addEventListener("click", function(){
   let input=document.getElementById("targetinput").value
-   document.getElementById("result2").innerHTML=validateFormat(input);
+   document.getElementById("result2").innerHTML=validateFormat(input);   
+    img.src="http://aslexpress.net/codingCompetition6/img/Inspiration.png";
 });
 document.getElementById("arraySizeBtn").addEventListener("click", function(){  
   let prctStr=document.getElementById("q1slide").value;
@@ -233,4 +253,6 @@ document.getElementById("sliderBlue").addEventListener("change", function(){
 document.getElementById("convertbtn").addEventListener("click", function(){
     let input=document.getElementById("source").value
     document.getElementById("converted").value=detectFormat(input);
+    let img=document.getElementById("profile");
+    img.src="http://aslexpress.net/codingCompetition6/img/Inspiration.png";
 });
