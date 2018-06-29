@@ -1,5 +1,3 @@
-//*****************Question1 1
-//let arr = [1,2,4,591,392,"392",391,2,5,10,2,"1","1",1,20,20,"20","20"];
 
 function createArray(arrSz,prctStr,arrMx) {
   // alert("Array size: "+arrSz+"\n Percent string: "+prctStr+"\n Array Max value: "+arrMx);
@@ -54,18 +52,19 @@ let slctFlatStr = _.map(strArr, function(group){
   return group;
   }
 });
-let displayNbr = "Number arrays: <br>" + JSON.stringify(slctFlatNum, null, 4)+ "<br>";
-let displayStr = "String arrays: <br>" + JSON.stringify(slctFlatStr, null, 4)+ "<br>";
+let displayNbr = "Number arrays: " + JSON.stringify(slctFlatNum, null, 4)+ "<br>";
+let displayStr = "String arrays: " + JSON.stringify(slctFlatStr, null, 4)+ "<br>";
 /* let displaytxt ="<br>"+displayNbr+displayStr+"The complete array: <br>"+JSON.stringify(slctFlat, null, 4)+"<br>"; */
-let rawStr = "<br>The raw array: <br>"+JSON.stringify(arr, null, 4)+"<br>";
-let grouped = "<br>The rough grouped array: <br>"+JSON.stringify(cleaned, null, 4)+"<br>"
+let rawStr = "The raw array:"+JSON.stringify(arr, null, 4)+ "<br>";
+let grouped = "The rough grouped array:"+JSON.stringify(cleaned, null, 4);
 let displaytxt =rawStr + displayNbr + displayStr;
 //why did the step above result in curly brackets?
 /* console.log("Sorted by typeof: ", output);
-console.log("Subdivided groups: ",subDiv); */
-console.log("The raw array: ",arr)
-document.getElementById("result1").innerHTML=displaytxt;
-document.getElementById("result1").value=displaytxt;
+console.log("Subdivided groups: ",subDiv);
+console.log("The raw array: ",arr) */
+
+resArr = [arr,slctFlatNum,slctFlatStr];
+return displaytxt;
 }
 
 //***************** Question 2
@@ -206,20 +205,45 @@ function detectFormat(input){
   alert("The value you entered is not correctly formatted. Make sure it starts with '#' for hex values or 'rgb' for rgb values");
   }
 }
+
+function changeImage1(id,src1,src2){
+ var img=document.getElementById(id);
+ if (img){
+  var src=img.src,p=src.slice(0,src.lastIndexOf('/'))+'/';
+  if (src==p+src1){
+   img.src=p+src2;
+  }
+  else {
+   img.src=p+src1;
+  }
+ }
+}
+let elements = document.getElementsByTagName('a');
+for(var i = 0, len = elements.length; i < len; i++) {
+    elements[i].onclick = function () {
+       let img=document.getElementById("profile");
+       img.src="http://aslexpress.net/codingCompetition6/img/Thinking.png";
+    }
+}
 //***************** event listeners
-document.getElementById("addendbutton").addEventListener("click", function(){
-  let input=document.getElementById("targetinput").value
-   document.getElementById("result2").innerHTML=validateFormat(input);
-});
+
 document.getElementById("arraySizeBtn").addEventListener("click", function(){  
   let prctStr=document.getElementById("q1slide").value;
   let arrSz=document.getElementById("arraySize").value;  
   let arrMx=document.getElementById("arrayMax").value;
-  createArray(arrSz,prctStr,arrMx);
+  let myRes = createArray(arrSz,prctStr,arrMx);
+  document.getElementById("result1").innerHTML=myRes;
+document.getElementById("result1").value=myRes;
+document.getElementById("profile").src = "http://aslexpress.net/codingCompetition6/img/Inspiration.png";
 });
 document.getElementById("q1slide").addEventListener("input", function(){
   let prctStr=document.getElementById("q1slide").value;
   document.getElementById("chosen").innerHTML=prctStr;
+});
+document.getElementById("addendbutton").addEventListener("click", function(){
+  let input=document.getElementById("targetinput").value
+   document.getElementById("result2").innerHTML=validateFormat(input);
+   document.getElementById("profile").src = "http://aslexpress.net/codingCompetition6/img/Inspiration.png";
 });
 document.getElementById("sliderRed").addEventListener("change", function(){
     refreshSwatch();
@@ -233,4 +257,21 @@ document.getElementById("sliderBlue").addEventListener("change", function(){
 document.getElementById("convertbtn").addEventListener("click", function(){
     let input=document.getElementById("source").value
     document.getElementById("converted").value=detectFormat(input);
+    document.getElementById("profile").src = "http://aslexpress.net/codingCompetition6/img/Inspiration.png";
 });
+function callback(e) {
+    var e = window.e || e;
+
+    if (e.target.tagName !== 'A'){
+      return;
+    }
+   else{
+    e.target.src = "http://aslexpress.net/codingCompetition6/img/Thinking.png";
+    return;
+   }    
+}
+
+if (document.addEventListener)
+    document.addEventListener('click', callback, false);
+else
+    document.attachEvent('onclick', callback);

@@ -475,3 +475,15 @@ a {
 a:hover, a:focus, a:active {
   color: #824027;
 }
+.img-fluid {
+
+  max-width: 100%;
+
+  height: auto;
+
+}
+.rounded-circle {
+
+  border-radius: 50% !important;
+
+}
