@@ -1,5 +1,3 @@
-//*****************Question1 1
-//let arr = [1,2,4,591,392,"392",391,2,5,10,2,"1","1",1,20,20,"20","20"];
 
 function createArray(arrSz,prctStr,arrMx) {
   // alert("Array size: "+arrSz+"\n Percent string: "+prctStr+"\n Array Max value: "+arrMx);
@@ -54,20 +52,19 @@ let slctFlatStr = _.map(strArr, function(group){
   return group;
   }
 });
-let displayNbr = "Number arrays: <br>" + JSON.stringify(slctFlatNum, null, 4)+ "<br>";
-let displayStr = "String arrays: <br>" + JSON.stringify(slctFlatStr, null, 4)+ "<br>";
+let displayNbr = "Number arrays: " + JSON.stringify(slctFlatNum, null, 4)+ "<br>";
+let displayStr = "String arrays: " + JSON.stringify(slctFlatStr, null, 4)+ "<br>";
 /* let displaytxt ="<br>"+displayNbr+displayStr+"The complete array: <br>"+JSON.stringify(slctFlat, null, 4)+"<br>"; */
-let rawStr = "<br>The raw array: <br>"+JSON.stringify(arr, null, 4)+"<br>";
-let grouped = "<br>The rough grouped array: <br>"+JSON.stringify(cleaned, null, 4)+"<br>"
+let rawStr = "The raw array:"+JSON.stringify(arr, null, 4)+ "<br>";
+let grouped = "The rough grouped array:"+JSON.stringify(cleaned, null, 4);
 let displaytxt =rawStr + displayNbr + displayStr;
 //why did the step above result in curly brackets?
 /* console.log("Sorted by typeof: ", output);
-console.log("Subdivided groups: ",subDiv); */
-console.log("The raw array: ",arr)
-document.getElementById("result1").innerHTML=displaytxt;
-document.getElementById("result1").value=displaytxt;
-document.getElementById("profile").src = "http://aslexpress.net/codingCompetition6/img/Inspiration.png";
+console.log("Subdivided groups: ",subDiv);
+console.log("The raw array: ",arr) */
 
+resArr = [arr,slctFlatNum,slctFlatStr];
+return displaytxt;
 }
 
 //***************** Question 2
@@ -229,20 +226,24 @@ for(var i = 0, len = elements.length; i < len; i++) {
     }
 }
 //***************** event listeners
-document.getElementById("addendbutton").addEventListener("click", function(){
-  let input=document.getElementById("targetinput").value
-   document.getElementById("result2").innerHTML=validateFormat(input);
-   document.getElementById("profile").src = "http://aslexpress.net/codingCompetition6/img/Inspiration.png";
-});
+
 document.getElementById("arraySizeBtn").addEventListener("click", function(){  
   let prctStr=document.getElementById("q1slide").value;
   let arrSz=document.getElementById("arraySize").value;  
   let arrMx=document.getElementById("arrayMax").value;
-  createArray(arrSz,prctStr,arrMx);
+  let myRes = createArray(arrSz,prctStr,arrMx);
+  document.getElementById("result1").innerHTML=myRes;
+document.getElementById("result1").value=myRes;
+document.getElementById("profile").src = "http://aslexpress.net/codingCompetition6/img/Inspiration.png";
 });
 document.getElementById("q1slide").addEventListener("input", function(){
   let prctStr=document.getElementById("q1slide").value;
   document.getElementById("chosen").innerHTML=prctStr;
+});
+document.getElementById("addendbutton").addEventListener("click", function(){
+  let input=document.getElementById("targetinput").value
+   document.getElementById("result2").innerHTML=validateFormat(input);
+   document.getElementById("profile").src = "http://aslexpress.net/codingCompetition6/img/Inspiration.png";
 });
 document.getElementById("sliderRed").addEventListener("change", function(){
     refreshSwatch();
